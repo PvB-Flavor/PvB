@@ -1,0 +1,16 @@
+{% extends 'dashboardbase.html.twig' %}
+
+{% block title %}
+    Nieuwe vraag - Bureau Profiel
+{% endblock %}
+
+{% block main %}
+    {{ form_start(form) }}
+        {{ form_errors(form) }}
+
+        {{ form_widget(form.question) }}
+        {{ form_widget(form.inputType) }}
+        {{ form_widget(form.options) }}
+
+    {{ form_end(form) }}
+{% endblock %}

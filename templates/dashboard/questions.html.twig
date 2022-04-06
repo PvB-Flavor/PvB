@@ -1,0 +1,57 @@
+{% extends 'dashboardbase.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    <link href="{{ asset('datatables/datatables.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script src="{{ asset('datatables/datatables.js') }}"></script>
+{% endblock %}
+
+{% block title %}
+    Vragen - Bureau Profiel
+{% endblock %}
+
+{% block main %}
+    <table id="questions" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Vraag</th>
+                <th>Type Vraag</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for question in questions %}
+                <tr>
+                    <td>{{ question.id }}</td>
+                    <td>{{ question.question }}</td>
+                    <td>{{ question.inputType }}</td>
+                    <td>
+                        <a href="{{ path('app_question', { 'id': question.id }) }}">Bewerk</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_new_question') }}">Nieuwe vraag toevoegen</a>
+
+    <script>
+        $(document).ready(function() {
+            $('#questions').DataTable({
+                "scrollX": true,
+                "info": false,
+                'aoColumnDefs': [{
+                    'bSortable': false,
+                    'aTargets': [-1] /* 1st one, start by the right */
+                }]
+            });
+        } );
+    </script>
+{% endblock %}
