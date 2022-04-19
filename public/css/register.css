@@ -48,6 +48,16 @@
   border: 4px solid #6ec5ed;
   width: 40px;
   height: 40px;
+  background: transparent;
+  border-radius: 50%;
+  border: 4px solid #6EC5ED;
+  color: #6EC5ED;
+  text-align: center;
+  font-size: 21px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  width: 40px;
+  height: 40px;
 
   display: flex;
   align-items: center;
@@ -61,6 +71,7 @@
   font-family: "Space Grotesk", sans-serif;
   font-weight: 600;
   color: white;
+  width: 100%;
 }
 
 .register-progress .line {
@@ -74,6 +85,12 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+}
+
+.register-page {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .register-question {
@@ -117,9 +134,14 @@
 
 .register-gender,
 .register-worked {
-  background: #ffffff;
-  height: 48px;
-  padding-left: 10px;
+    background: #ffffff;
+    height: 48px;
+    padding-left: 10px;
+}
+.register-onechoice {
+    background: #FFFFFF;
+    height: 48px;
+    padding-left: 10px;
 }
 
 .register-choice {
@@ -139,7 +161,7 @@
   display: inline-block;
 }
 
-.register-next {
+.register-submit {
   background: #ea5b3f;
   color: white;
   font-family: "Space Grotesk", sans-serif;

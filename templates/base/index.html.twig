@@ -16,12 +16,94 @@
                             label: 'Voornaam',
                             type: 'text',
                             placeholder: 'Voornaam...',
-                            class: 'register-firstname',
+                            classname: 'register-firstname',
+                            required: true,
                             fullwidth: false
+                        },
+                        {
+                            label: 'Achternaam',
+                            type: 'text',
+                            placeholder: 'Achternaam...',
+                            classname: 'register-surname',
+                            required: true,
+                            fullwidth: false
+                        },
+                        {
+                            label: 'Jouw e-mailadres',
+                            type: 'email',
+                            placeholder: 'E-mailadres...',
+                            classname: 'register-email',
+                            required: true,
+                            fullwidth: true
+                        },
+                        {
+                            label: 'Geslacht',
+                            type: 'choice',
+                            classname: 'register-gender register-onechoice',
+                            choices: [
+                                {
+                                    id: 'gender-male',
+                                    value: 'male',
+                                    name: 'register-gender',
+                                    label: 'Man'
+                                },
+                                {
+                                    id: 'gender-female',
+                                    value: 'woman',
+                                    name: 'register-gender',
+                                    label: 'Vrouw'
+                                },
+                                {
+                                    id: 'gender-different',
+                                    value: 'different',
+                                    name: 'register-gender',
+                                    label: 'Anders'
+                                },
+                            ],
+                            required: true,
+                            fullwidth: true
+                        },
+                        {
+                            label: 'Geboortedatum',
+                            type: 'date',
+                            classname: 'register-birthdate',
+                            required: true,
+                            fullwidth: false
+                        },
+                        {
+                            label: 'Heb je al eerder meegewerkt aan marktonderzoeken bij Bureau Profiel?',
+                            type: 'choice',
+                            classname: 'register-participated register-onechoice',
+                            choices: [
+                                {
+                                    id: 'participated-yes',
+                                    value: 'no',
+                                    name: 'register-participated',
+                                    label: 'Ja'
+                                },
+                                {
+                                    id: 'participated-no',
+                                    value: 'yes',
+                                    name: 'register-participated',
+                                    label: 'Nee'
+                                },
+                            ],
+                            required: true,
+                            fullwidth: true
                         },
                     ]
                 },
-                {}
+                {
+                    fields: [
+                        {
+                            label: 'Achternaam',
+                            type: 'text',
+                            placeholder: 'Voornaam...',
+                            classname: 'register-firstname',
+                            fullwidth: false
+                        },
+                    ]
+                }
             ]
         }
     </script>
@@ -36,81 +118,11 @@
                     <p>En start met verdienen</p>
                 </div>
                 <div class="register-progress">
-                    <div class="count">
-                        <span>1</span>
-                    </div>
-                    <div class="line"></div>
+
                 </div>
-                <div class="register-questions">
-                    <div class="register-questions-page">
-                        <div class="register-question">
-                            <p>Voornaam</p>
-                            <input class="register-firstname" type="text" placeholder="Voornaam...">
-                        </div>
-                        <div class="register-question">
-                            <p>Achternaam</p>
-                            <input class="register-surname" type="text" placeholder="Achternaam...">
-                        </div>
-                        <div class="register-question" style="width: 100%">
-                            <p>Jouw e-mailadres</p>
-                            <input class="register-email" type="email" placeholder="E-mailadres...">
-                        </div>
-                        <div class="register-question">
-                            <p>Gender</p>
-                            <div class="register-gender">
-                                <div class="register-choice" >
-                                    <label for="">
-                                        <input type="radio" id="man" name="gender" value="male" checked>
-                                        <span class="checkmark">Man</span>
-                                    </label>
-                                </div>
 
-                                <!-- <div class="register-choice" >
-                                    <label for="">
-                                        <input type="radio" id="man" name="gender" value="male" checked>
-                                        <span class="checkmark">Vrouw</span>
-                                    </label>
-                                </div>
+                <div class="register-pages">
 
-                                <div class="register-choice" >
-                                    <label for="">
-                                        <input type="radio" id="different" name="gender" value="male" checked>
-                                        <span class="checkmark">Anders</span>
-                                    </label>
-                                </div> -->
-                            </div>
-                        </div>
-                        <div class="register-question">
-                            <p>Geboortedatum</p>
-                            <input class="register-birthdate" type="date">
-                        </div>
-                        <div class="register-question">
-                            <p>Heb je al eerder meegewerkt aan marktonderzoeken bij Bureau Profiel?</p>
-                            <div class="register-worked">
-                                <div class="register-choice">
-                                    <input type="radio" id="worked-yes" name="worked" value="yes" checked>
-                                    <label for="worked-yes">Ja</label>
-                                </div>
-
-                                <div class="register-choice">
-                                    <input type="radio" id="worked-no" name="worked" value="no" checked>
-                                    <label for="worked-no">Nee</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="register-question">
-                            <p>Zo ja, hoe vaak?</p>
-                            <input class="register-worked-count" value="0" type="number">
-                        </div>
-                        <div class="register-question">
-                            <p>Postcode</p>
-                            <input class="register-postalcode" type="text" placeholder="0000AA">
-                        </div>
-                        <div class="register-question">
-                            <p>Woonplaats</p>
-                            <input class="register-city" type="text" placeholder="Woonplaats...">
-                        </div>
-                    </div>
                 </div>
 
                 <button class="register-submit">Volgende stap</button>
@@ -118,6 +130,6 @@
 
             <script src="{{ asset('js/register.js') }}"></script>
         </div>
-        <h1>Hello there! ✅</h1>
+
     </div>
 {% endblock %}

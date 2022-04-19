@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e6b0d37-5b9a-4d1a-ab68-f8fa81be595b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/js/register.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/base.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/register.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -122,6 +123,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -143,7 +145,7 @@
       <workItem from="1648199750413" duration="9079000" />
       <workItem from="1648545122822" duration="10061000" />
       <workItem from="1649758701402" duration="4367000" />
-      <workItem from="1650353409827" duration="7621000" />
+      <workItem from="1650353409827" duration="13952000" />
     </task>
     <servers />
   </component>
