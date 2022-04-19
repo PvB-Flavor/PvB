@@ -162,10 +162,10 @@ class RegistrationForm {
 
             if (this.currentPage === i) {
                 point.style.background = '#6EC5ED';
-                point.style.color = 'white';
+                point.querySelector('span').style.color = 'white';
             } else {
                 point.style.background = 'transparent';
-                point.style.color = '#6EC5ED';
+                point.querySelector('span').style.color = '#6EC5ED';
             }
         }
     }

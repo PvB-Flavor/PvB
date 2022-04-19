@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0e6b0d37-5b9a-4d1a-ab68-f8fa81be595b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/register.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/register.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base/index.html.twig" afterDir="false" />
     </list>
