@@ -6,7 +6,87 @@
 
 {% block main %}
     <div>
+        <div class="register">
+            <div class="register-form">
+                <div class="register-title">
+                    <h3>Vul hier je gegevens in</h3>
+                    <p>En start met verdienen</p>
+                </div>
+                <div class="register-progress">
+                    <div class="count">
+                        <span>1</span>
+                    </div>
+                    <div class="line"></div>
+                </div>
+                <div class="register-questions">
+                    <div class="register-questions-page">
+                        <div class="register-question">
+                            <p>Voornaam</p>
+                            <input class="register-firstname" type="text" placeholder="Voornaam...">
+                        </div>
+                        <div class="register-question">
+                            <p>Achternaam</p>
+                            <input class="register-surname" type="text" placeholder="Achternaam...">
+                        </div>
+                        <div class="register-question" style="width: 100%">
+                            <p>Jouw e-mailadres</p>
+                            <input class="register-email" type="email" placeholder="E-mailadres...">
+                        </div>
+                        <div class="register-question">
+                            <p>Gender</p>
+                            <div class="register-gender">
+                                <div class="register-choice" >
+                                    <input type="radio" id="man" name="gender" value="male" checked>
+                                    <label for="man">Man</label>
+                                </div>
 
+                                <div class="register-choice" >
+                                    <input type="radio" id="female" name="gender" value="female" checked>
+                                    <label for="female">Vrouw</label>
+                                </div>
+
+                                <div class="register-choice" >
+                                    <input type="radio" id="different" name="gender" value="different" checked>
+                                    <label for="different">Anders</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="register-question">
+                            <p>Geboortedatum</p>
+                            <input class="register-birthdate" type="date">
+                        </div>
+                        <div class="register-question">
+                            <p>Heb je al eerder meegewerkt aan marktonderzoeken bij Bureau Profiel?</p>
+                            <div class="register-worked">
+                                <div class="register-choice">
+                                    <input type="radio" id="worked-yes" name="worked" value="yes" checked>
+                                    <label for="worked-yes">Ja</label>
+                                </div>
+
+                                <div class="register-choice">
+                                    <input type="radio" id="worked-no" name="worked" value="no" checked>
+                                    <label for="worked-no">Nee</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="register-question">
+                            <p>Zo ja, hoe vaak?</p>
+                            <input class="register-worked-count" value="0" type="number">
+                        </div>
+                        <div class="register-question">
+                            <p>Postcode</p>
+                            <input class="register-postalcode" type="text" placeholder="0000AA">
+                        </div>
+                        <div class="register-question">
+                            <p>Woonplaats</p>
+                            <input class="register-city" type="text" placeholder="Woonplaats...">
+                        </div>
+                    </div>
+                </div>
+
+                <button class="register-next">Volgende stap</button>
+            </div>
+        </div>
         <h1>Hello there! ✅</h1>
     </div>
 {% endblock %}
