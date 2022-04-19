@@ -4,6 +4,29 @@
     Bureau Profiel - Home
 {% endblock %}
 
+{% block javascripts %}
+    {{ parent() }}
+
+    <script>
+        const FORM_DATA = {
+            pages: [
+                {
+                    fields: [
+                        {
+                            label: 'Voornaam',
+                            type: 'text',
+                            placeholder: 'Voornaam...',
+                            class: 'register-firstname',
+                            fullwidth: false
+                        },
+                    ]
+                },
+                {}
+            ]
+        }
+    </script>
+{% endblock %}
+
 {% block main %}
     <div>
         <div class="register">
@@ -84,8 +107,10 @@
                     </div>
                 </div>
 
-                <button class="register-next">Volgende stap</button>
+                <button class="register-submit">Volgende stap</button>
             </div>
+
+            <script src="{{ asset('js/register.js') }}"></script>
         </div>
         <h1>Hello there! ✅</h1>
     </div>
