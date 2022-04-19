@@ -1,0 +1,112 @@
+.intro-block {
+  background-color: #ece9e958;
+  height: 94rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.intro-block-text {
+  max-width: 69rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 14rem;
+}
+
+.intro-block-text h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 10rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.intro-block-text h2 span {
+  font-weight: 700;
+}
+
+.intro-block-text h3 {
+  font-family: "Karla";
+  font-weight: 700;
+  font-size: 3.2rem;
+  color: #6ec5ed;
+  margin-bottom: 4.5rem;
+}
+
+.intro-block-points {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+}
+
+.intro-block-points p {
+  width: calc(100% / 2);
+  font-family: "Karla";
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+
+.intro-block-points p::before {
+  content: "";
+  background-image: url(../images/);
+}
+
+.intro-block-buttons {
+  margin-top: 6rem;
+}
+
+.intro-block-buttons button {
+  background-color: #ea5b3f;
+  font-size: 2.5rem;
+  color: #fff;
+  border: none;
+  width: 32.5rem;
+  height: 4rem;
+}
+
+.intro-block-buttons a {
+  margin-left: 5rem;
+  color: #ea5b3f !important;
+  font-family: "Space Grotesk";
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+
+.intro-block-girl {
+  width: 100%;
+  min-height: 120rem;
+  background-image: url(../images/afbeeling-invorm-eerstevouw.png);
+  background-position: left;
+  background-size: cover;
+  background-position-x: 5rem;
+  background-repeat: no-repeat;
+}
+
+.how-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+/*# sourceMappingURL=home.css.map */

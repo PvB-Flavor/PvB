@@ -1,0 +1,78 @@
+.intro-block {
+  background-color: #ece9e958;
+  height: 94rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &-text {
+    max-width: 69rem;
+    display: flex;
+    flex-direction: column;
+    margin-left: 14rem;
+    h2 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 10rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      span {
+        font-weight: 700;
+      }
+    }
+    h3 {
+      font-family: "Karla";
+      font-weight: 700;
+      font-size: 3.2rem;
+      color: #6ec5ed;
+      margin-bottom: 4.5rem;
+    }
+  }
+  &-points {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    p {
+      width: calc(100% / 2);
+      font-family: "Karla";
+      font-weight: 500;
+      font-size: 1.8rem;
+      &::before {
+        content: "";
+        background-image: url(../images/);
+      }
+    }
+  }
+  &-buttons {
+    margin-top: 6rem;
+    button {
+      background-color: #ea5b3f;
+      font-size: 2.5rem;
+      color: #fff;
+      border: none;
+      width: 32.5rem;
+      height: 4rem;
+    }
+    a {
+      margin-left: 5rem;
+      color: #ea5b3f !important;
+      font-family: "Space Grotesk";
+      font-weight: 600;
+      font-size: 2.5rem;
+    }
+  }
+  &-girl {
+    width: 100%;
+    min-height: 120rem;
+    background-image: url(../images/afbeeling-invorm-eerstevouw.png);
+    background-position: left;
+    background-size: cover;
+    background-position-x: 5rem;
+    background-repeat: no-repeat;
+  }
+}
+
+.how-block {
+  display: flex;
+  flex-direction: row;
+}

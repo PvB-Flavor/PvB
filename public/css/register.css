@@ -1,8 +1,11 @@
 .register {
+  display: none;
   position: fixed;
 
   width: 100vw;
   height: 100vh;
+  top: 0;
+  left: 0;
 
   background: rgba(115, 115, 115, 0.25);
 
@@ -50,11 +53,11 @@
   height: 40px;
   background: transparent;
   border-radius: 50%;
-  border: 4px solid #6EC5ED;
-  color: #6EC5ED;
+  border: 4px solid #6ec5ed;
+  color: #6ec5ed;
   text-align: center;
   font-size: 21px;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-weight: 600;
   width: 40px;
   height: 40px;
@@ -88,9 +91,9 @@
 }
 
 .register-page {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .register-question {
@@ -134,14 +137,14 @@
 
 .register-gender,
 .register-worked {
-    background: #ffffff;
-    height: 48px;
-    padding-left: 10px;
+  background: #ffffff;
+  height: 48px;
+  padding-left: 10px;
 }
 .register-onechoice {
-    background: #FFFFFF;
-    height: 48px;
-    padding-left: 10px;
+  background: #ffffff;
+  height: 48px;
+  padding-left: 10px;
 }
 
 .register-choice {
