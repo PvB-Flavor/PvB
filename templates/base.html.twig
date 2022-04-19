@@ -18,6 +18,18 @@
         {% endblock %}
     </head>
     <body>
+        {% if is_granted('ROLE_ADMIN') %}
+            <div class="admin-notice">
+                <div>
+                    <p>Ingelogd als {{ email }}</p>
+                    <button class="admin-notice-toggle"></button>
+                </div>
+                <a href="{{ path('app_admin') }}">Naar dashboard</a>
+            </div>
+
+            <script src="{{ asset('js/adminnotice.js') }}"></script>
+        {% endif %}
+
         {% block main %}{% endblock %}
     </body>
 </html>

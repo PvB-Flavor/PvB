@@ -114,19 +114,24 @@
                             required: true,
                             fullwidth: false
                         },
-                    ]
+                    ],
                 },
-                {
-                    fields: [
-                        {
-                            label: 'Achternaam',
-                            type: 'text',
-                            placeholder: 'Voornaam...',
-                            classname: 'register-firstname',
-                            fullwidth: false
-                        },
-                    ]
-                }
+                {% for page in pages %}
+                    {
+                        fields: [
+                        {% for question in page %}
+                            {
+                                label: '{{ question.question }}',
+                                type: '{{ question.inputType }}',
+                                classname: 'question-{{ question.id }}',
+                                placeholder: '{{ question.question }}...',
+                                required: {% if question.required %}true{% else %}false{% endif %},
+                                fullwidth: {% if question.fullWidth %}true{% else %}false{% endif %}
+                            },
+                        {% endfor %}
+                        ],
+                    },
+                {% endfor %}
             ]
         }
     </script>

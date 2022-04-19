@@ -11,12 +11,17 @@ function getFullWidth(bool) {
     return '';
 }
 
+function getRequired(bool) {
+    if (bool) return `required"`;
+    return '';
+}
+
 const getFieldMarkup = {
     text: function(data) {
         return `
             <div class="register-question" ${ getFullWidth(data.fullwidth) }>
                 <p>${ data.label }</p>
-                <input class="${ data.classname }" type="text" placeholder="${ data.placeholder }">
+                <input ${ getRequired(data.required) } class="${ data.classname }" type="text" placeholder="${ data.placeholder || '' }">
             </div>
         `;
     },
@@ -25,7 +30,7 @@ const getFieldMarkup = {
         return `
             <div class="register-question" ${ getFullWidth(data.fullwidth) }>
                 <p>${ data.label }</p>
-                <input class="${ data.classname }" type="email" placeholder="${ data.placeholder }">
+                <input ${ getRequired(data.required) } class="${ data.classname }" type="email" placeholder="${ data.placeholder || '' }">
             </div>
         `;
     },
@@ -49,7 +54,7 @@ const getFieldMarkup = {
         return `
             <div class="register-question">
                 <p>${ data.label }</p>
-                <div class="${ data.classname }">
+                <div class="${ data.classname }" ${ getRequired(data.required) }>
                     ${ getChoicesMarkup() }
                 </div>
             </div>
@@ -60,7 +65,7 @@ const getFieldMarkup = {
         return `
             <div class="register-question" ${ data.fullwidth }>
                 <p>${ data.label }</p>
-                <input class="${ data.classname }" type="date">
+                <input ${ getRequired(data.required) } class="${ data.classname }" type="date">
             </div>
         `;
     },
@@ -69,7 +74,7 @@ const getFieldMarkup = {
         return `
             <div class="register-question" ${ data.fullwidth }>
                 <p>${ data.label }</p>
-                <input class="${ data.classname }" value="0" type="number">
+                <input ${ getRequired(data.required) } class="${ data.classname }" value="0" type="number">
             </div>
         `;
     }
@@ -92,6 +97,8 @@ class RegistrationForm {
         registerSubmit.addEventListener('click', () => {
             if (this.currentPage + 1 !== this.pages.length) {
                 this.toPage(this.currentPage + 1);
+            } else if (this.currentPage + 1 === this.pages.length) {
+
             }
         })
     }
@@ -121,7 +128,7 @@ class RegistrationForm {
         }
 
         this.currentPage = index;
-        this.pages[index].style.display = 'block';
+        this.pages[index].style.display = 'flex';
 
         if (this.currentPage + 1 === this.pages.length) {
             registerSubmit.innerHTML = 'Verstuur inschrijving';

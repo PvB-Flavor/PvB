@@ -12,5 +12,79 @@ html {
   font-size: 62.5%;
 }
 body {
-  font-family: "";
+
+}
+
+.admin-notice {
+  max-width: 300px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #6ec5ed;
+  text-align: center;
+  z-index: 2000;
+}
+
+.admin-notice div p {
+  width: calc(100% - 35px);
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 800;
+  color: white;
+  margin: 0;
+  padding: 10px 0;
+}
+
+.admin-notice div {
+  display: flex;
+
+}
+
+.admin-notice div button {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  border: 0;
+  background: #ea5b3f;
+  color: white;
+  fill: white;
+  outline: none;
+  cursor: pointer;
+
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+}
+
+.admin-notice button svg {
+  width: 60%;
+  height: 60%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.admin-notice a {
+  display: block;
+  color: white;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  background: #ea5b3f;
+  text-align: center;
+  width: 100%;
+  padding: 20px 0;
+  text-decoration: none;
+}
+
+.admin-notice a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+@media only screen and (max-width: 900px) {
+  .admin-notice {
+    max-width: 100%;
+  }
 }

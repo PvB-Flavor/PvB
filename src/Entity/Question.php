@@ -34,7 +34,9 @@ class Question
      *     @Assert\EqualTo("select"),
      *     @Assert\EqualTo("email"),
      *     @Assert\EqualTo("date"),
-     *     @Assert\EqualTo("number")
+     *     @Assert\EqualTo("number"),
+     *     @Assert\EqualTo("checkboxes"),
+     *     @Assert\EqualTo("radios")
      * })
      */
     private $inputType;
@@ -44,6 +46,18 @@ class Question
      * @ORM\Column(type="simple_array", nullable=true)
      */
     private $options;
+
+    /**
+     * Whether the field should take the full width of the form.
+     * @ORM\Column(type="boolean", nullable=false, options={"default" : false})
+     */
+    private $fullWidth;
+
+    /**
+     * Whether the field should take the full width of the form.
+     * @ORM\Column(type="boolean", nullable=false, options={"default" : false})
+     */
+    private $required;
 
     public function getId(): ?int
     {
@@ -97,4 +111,38 @@ class Question
     {
         $this->options = $options;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getFullWidth()
+    {
+        return $this->fullWidth;
+    }
+
+    /**
+     * @param mixed $fullWidth
+     */
+    public function setFullWidth($fullWidth): void
+    {
+        $this->fullWidth = $fullWidth;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRequired()
+    {
+        return $this->required;
+    }
+
+    /**
+     * @param mixed $required
+     */
+    public function setRequired($required): void
+    {
+        $this->required = $required;
+    }
+
+
 }

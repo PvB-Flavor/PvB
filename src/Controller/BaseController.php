@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Question;
 use App\Form\RegisterType;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -14,11 +15,28 @@ class BaseController extends AbstractController
     /**
      * @Route("/", name="app_home")
      *
+     * @param ManagerRegistry $doctrine
      * @return Response
      */
-    public function index(): Response
+    public function index(ManagerRegistry $doctrine): Response
     {
+        $email = null;
+        if ($this->getUser()) $email = $this->getUser()->getUserIdentifier();
 
+        $questions = $doctrine->getRepository(Question::class)->findAll();
+
+        $maxPageSize = 10;
+
+        $pages = [];
+
+        $currentPage = 0;
+
+        foreach ( $questions as $question ) {
+            if (!array_key_exists($currentPage, $pages)) $pages[$currentPage] = [];
+            array_push($pages[$currentPage], $question);
+
+            if (count($pages[$currentPage]) >= $maxPageSize) $currentPage++;
+        }
 
         return $this->render('base/index.html.twig', get_defined_vars());
     }
@@ -30,6 +48,9 @@ class BaseController extends AbstractController
      */
     public function contact(): Response
     {
+        $email = null;
+        if ($this->getUser()) $email = $this->getUser()->getUserIdentifier();
+
         return $this->render('base/contact.html.twig', get_defined_vars());
     }
 }
