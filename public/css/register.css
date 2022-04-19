@@ -1,156 +1,166 @@
 .register {
-    position: fixed;
+  position: fixed;
 
-    width: 100vw;
-    height: 100vh;
+  width: 100vw;
+  height: 100vh;
 
-    background: rgba(115, 115, 115, 0.25);
+  background: rgba(115, 115, 115, 0.25);
 
-    z-index: 1000;
+  z-index: 1000;
 }
 
 .register-form {
-    width: 100%;
-    height: 90vh;
-    max-width: 871px;
-    background: #ECE9E9;
-    margin: 5vh auto 0;
-    overflow-y: scroll;
-    padding: 50px 130px 50px 70px;
+  width: 100%;
+  height: 90vh;
+  max-width: 871px;
+  background: #ece9e9;
+  margin: 5vh auto 0;
+  overflow-y: scroll;
+  padding: 50px 130px 50px 70px;
 }
 
 .register-title h3 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
-    font-size: 45px;
-    margin-bottom: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: 45px;
+  margin-bottom: 0;
 }
 
 .register-title p {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
-    font-size: 35px;
-    color: #EA5B3F;
-    margin-top: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: 35px;
+  color: #ea5b3f;
+  margin-top: 0;
 }
 
 .register-progress {
-    width: 100%;
+  width: 100%;
 
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1.7rem;
 }
 
 .register-progress .count {
-    background: #6EC5ED;
-    border-radius: 50%;
-    border: 4px solid #6EC5ED;
-    width: 40px;
-    height: 40px;
+  background: #6ec5ed;
+  border-radius: 50%;
+  border: 4px solid #6ec5ed;
+  width: 40px;
+  height: 40px;
 
-    display: flex;
-    align-items: center;
-    align-content: center;
+  display: flex;
+  align-items: center;
+  align-content: center;
 }
 
 .register-progress .count span {
-    width: 100%;
-    text-align: center;
-    font-size: 21px;
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
-    color: white;
+  width: 100%;
+  text-align: center;
+  font-size: 21px;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  color: white;
 }
 
 .register-progress .line {
-    width: 20px;
-    background: #6EC5ED;
-    height: 4px;
-    margin-top: 18px;
+  width: 20px;
+  background: #6ec5ed;
+  height: 4px;
+  margin-top: 18px;
 }
 
 .register-questions-page {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-
 .register-question {
-    width: 50%;
+  width: 50%;
+  padding-right: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .register-question * {
-    display: block;
-    width: 100%;
+  display: block;
+  width: 100%;
 }
 
-.register-question p, .register-question input {
-    margin: 0;
-    font-family: 'Karla', sans-serif;
-    font-weight: 400;
-    font-size: 15px;
+.register-question p,
+.register-question input {
+  margin: 0;
+  font-family: "Karla", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
 }
 
 .register-question p {
-    font-weight: 600;
+  font-weight: 600;
+  margin-top: 1.8rem;
+  margin-bottom: 0.7rem;
 }
 
 .register-question input {
-    padding: 10px;
-    border: 0;
-    background: #FFFFFF;
-    outline: none;
-    height: 48px;
+  padding: 10px;
+  border: 0;
+  background: #ffffff;
+  outline: none;
+  height: 48px;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 2.5rem;
 }
 
-.register-gender, .register-worked {
-    background: #FFFFFF;
-    height: 48px;
-    padding-left: 10px;
+.register-gender,
+.register-worked {
+  background: #ffffff;
+  height: 48px;
+  padding-left: 10px;
 }
 
 .register-choice {
-    display: inline-flex;
-    align-content: center;
-    align-items: center;
-    width: fit-content;
-    margin-right: 0;
+  display: inline-flex;
+  align-content: center;
+  align-items: center;
+  width: fit-content;
+  margin-right: 0;
 }
 
 .register-choice label {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .register-choice * {
-    width: unset;
-    display: inline-block;
+  width: unset;
+  display: inline-block;
 }
 
 .register-next {
-    background: #EA5B3F;
-    color: white;
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
-    border: 0;
-    outline: none;
-    height: 42px;
-    width: 210px;
-    margin-top: 30px;
-    font-size: 0.9rem;
+  background: #ea5b3f;
+  color: white;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  border: 0;
+  outline: none;
+  margin-top: 30px;
+  padding: 0.7rem 2.8rem;
+  font-size: 2.2rem;
 }
 
 @media only screen and (max-width: 871px) {
-    .register-form {
-        max-height: unset;
-        height: auto;
-        min-height: 100vh;
-        margin: 0;
-        overflow-y: scroll;
-    }
+  .register-form {
+    max-height: unset;
+    height: auto;
+    min-height: 100vh;
+    margin: 0;
+    overflow-y: scroll;
+  }
 
-    .register-question {
-        flex: 100%;
-    }
+  .register-question {
+    flex: 100%;
+  }
 }
-
