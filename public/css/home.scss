@@ -1,20 +1,28 @@
 .intro-block {
   background-color: #ece9e958;
   height: 94rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  position: relative;
+  height: 75rem;
+  padding: 10rem 5vw;
 
   &-text {
+    width: 100%;
     max-width: 69rem;
     display: flex;
     flex-direction: column;
-    margin-left: 14rem;
+    position: relative;
+    z-index: 99;
+    &:after {
+    }
+
     h2 {
       font-family: "Space Grotesk", sans-serif;
-      font-size: 10rem;
+      font-size: 9.5rem;
       font-weight: 500;
       margin-bottom: 1.5rem;
+      @media (min-width: 769px) and (max-width: 1024px) {
+        font-size: 7rem;
+      }
       span {
         font-weight: 700;
       }
@@ -38,7 +46,7 @@
       font-weight: 500;
       font-size: 1.8rem;
       &::before {
-        content: "";
+        content: "- ";
         background-image: url(../images/);
       }
     }
@@ -62,17 +70,136 @@
     }
   }
   &-girl {
-    width: 100%;
-    min-height: 120rem;
-    background-image: url(../images/afbeeling-invorm-eerstevouw.png);
-    background-position: left;
-    background-size: cover;
-    background-position-x: 5rem;
-    background-repeat: no-repeat;
+    width: auto;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: -7rem;
+    img {
+      margin-left: 40%;
+      height: 950px;
+      @media (min-width: 1025px) and (max-width: 1200px) {
+        height: 900px;
+      }
+      @media (min-width: 769px) and (max-width: 1024px) {
+        height: 700px;
+      }
+      @media (min-width: 481px) and (max-width: 768px) {
+        height: 500px;
+      }
+      @media (min-width: 0px) and (max-width: 480px) {
+      }
+    }
   }
 }
 
 .how-block {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  &-img {
+    min-width: 42.5vw;
+    height: 700px;
+    background-image: url(../images/afbeelding-hoewerkthet.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    img {
+      width: 100%;
+    }
+  }
+  &-text {
+    padding-left: 10rem;
+    padding-right: 10vw;
+    a {
+      margin-top: 2rem;
+    }
+    #spacing {
+      margin-bottom: 3rem;
+    }
+  }
+
+  .blue-grotesk {
+    color: #6ec5ed !important;
+    font-family: "Space Grotesk";
+    font-weight: 500;
+    font-size: 2rem;
+  }
+
+  .orange-grostesk {
+    color: #ea5b3f !important;
+    font-family: "Space Grotesk";
+    font-weight: 600;
+    font-size: 2.5rem;
+  }
+}
+
+.black-grostesk {
+  color: #181818 !important;
+  font-family: "Space Grotesk";
+  font-weight: 700;
+  font-size: 5.5rem;
+  margin-bottom: 2rem;
+}
+.black-karla {
+  color: #181818 !important;
+  font-family: "Karla";
+  font-weight: 500;
+  font-size: 1.5rem;
+  &-bold {
+    font-weight: 700;
+  }
+}
+
+.research-block {
+  margin-top: 3rem;
+  &-container {
+    background-color: #6ec5ed;
+    padding-top: 4rem;
+    padding-left: 14rem;
+    width: 100vw;
+    height: 40rem;
+    h2 {
+      color: #ffffff;
+      font-family: "Space Grotesk";
+      font-weight: 700;
+      font-size: 4.8rem;
+    }
+    p {
+      color: #ffffff;
+      font-family: "Space Grotesk";
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.about-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  //   margin-top: 4rem;
+  &-text {
+    padding: 5rem;
+  }
+  &-img {
+    img {
+      width: 100%;
+    }
+  }
+  .orange-grotesk {
+    color: #ea5b3f !important;
+    font-family: "Space Grotesk";
+    font-weight: 500;
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+}
+@media (min-width: 481px) and (max-width: 768px) {
+}
+@media (min-width: 0px) and (max-width: 480px) {
 }
