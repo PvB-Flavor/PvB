@@ -3,6 +3,8 @@
   height: 94rem;
   position: relative;
   height: 75rem;
+  padding-top: 10rem;
+  padding-left: 7vw;
   padding: 10rem 5vw;
 }
 
@@ -59,15 +61,23 @@
 }
 
 .intro-block-points p {
-  width: calc(100% / 2);
+  width: calc(100% / 2 - 5rem);
   font-family: "Karla";
   font-weight: 500;
   font-size: 1.8rem;
+  position: relative;
+  margin-left: 5rem;
 }
 
 .intro-block-points p::before {
-  content: "- ";
-  background-image: url(../images/);
+  content: " ";
+  position: absolute;
+  left: -1.5rem;
+  top: 0.9rem;
+  background-image: url(../images/bulletpoint-black.svg);
+  background-size: 100% 100%;
+  height: 1rem;
+  width: 1rem;
 }
 
 .intro-block-buttons {
@@ -149,7 +159,7 @@
 }
 
 .how-block-text {
-  padding-left: 10rem;
+  padding-left: 7vw;
   padding-right: 10vw;
 }
 
@@ -166,13 +176,6 @@
   font-family: "Space Grotesk";
   font-weight: 500;
   font-size: 2rem;
-}
-
-.how-block .orange-grostesk {
-  color: #ea5b3f !important;
-  font-family: "Space Grotesk";
-  font-weight: 600;
-  font-size: 2.5rem;
 }
 
 .black-grostesk {
@@ -194,6 +197,20 @@
   font-weight: 700;
 }
 
+.orange-grostesk {
+  color: #ea5b3f !important;
+  font-family: "Space Grotesk";
+  font-weight: 600;
+  font-size: 2.2rem;
+}
+
+.orange-title {
+  color: #ea5b3f !important;
+  font-family: "Space Grotesk";
+  font-weight: 500;
+  font-size: 2rem;
+}
+
 .research-block {
   margin-top: 3rem;
 }
@@ -201,7 +218,7 @@
 .research-block-container {
   background-color: #6ec5ed;
   padding-top: 4rem;
-  padding-left: 14rem;
+  padding-left: 7vw;
   width: 100vw;
   height: 40rem;
 }
@@ -220,6 +237,21 @@
   font-size: 1.5rem;
 }
 
+.research-block .center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.research-block-more {
+  margin-top: 2rem;
+  margin-bottom: 10rem;
+}
+
 .about-block {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -234,17 +266,47 @@
 }
 
 .about-block-text {
-  padding: 5rem;
+  padding-left: 7vw;
+  padding-right: 5vw;
 }
 
-.about-block-img img {
-  width: 100%;
+.about-block-text .spacing {
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
 }
 
-.about-block .orange-grotesk {
-  color: #ea5b3f !important;
-  font-family: "Space Grotesk";
-  font-weight: 500;
-  font-size: 2rem;
+.about-block-img {
+  min-width: 42.5vw;
+  min-height: 450px;
+  background-image: url(../images/overbureauprofiel.jpg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.about-block ul {
+  margin-top: 2rem;
+  list-style: none;
+}
+
+.about-block ul li {
+  position: relative;
+  margin-bottom: 1.5rem;
+  margin-left: 2rem;
+  color: #181818;
+  font-family: "Karla";
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.about-block ul li::before {
+  content: " ";
+  position: absolute;
+  left: -1.5rem;
+  top: 0.6rem;
+  background-image: url(../images/bulletpoint-orange.svg);
+  background-size: 100% 100%;
+  height: 1rem;
+  width: 1rem;
 }
 /*# sourceMappingURL=home.css.map */
