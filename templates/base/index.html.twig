@@ -139,21 +139,19 @@
 
 {% block main %}
     <div>
-        <!-- <header>
-            <nav class="navbar">
-                <div class="logo"><img src="" alt="Logo-image"></div>
-                <ul id="primary-menu" class="menu nav-menu">
-                    <li class="menu-item"><a class="nav__link"  href="#">Respondenten</a></li>
-                    <li class="menu-item"><a class="nav__link"  href="#">Bedrijven</a></li>
-                    <li class="menu-item"><a class="nav__link"  href="#">Onderzoek</a></li>
-                    <li class="menu-item"><a class="nav__link"  href="#">Contact</a></li>
-                    <button>Inschrijveen</button>
-                </ul>
-            </nav>
-        </header> -->
-        <div class="intro-block">
+        <!-- <nav class="navbar">
+            <div class="logo"><img src="" alt="Logo-image"></div>
+            <ul id="primary-menu" class="menu nav-menu">
+                <li class="menu-item"><a class="nav__link"  href="#">Respondenten</a></li>
+                <li class="menu-item"><a class="nav__link"  href="#">Bedrijven</a></li>
+                <li class="menu-item"><a class="nav__link"  href="#">Onderzoek</a></li>
+                <li class="menu-item"><a class="nav__link"  href="#">Contact</a></li>
+                <button>Inschrijveen</button>
+            </ul>
+        </nav> -->
+        <section class="intro-block">
             <div class="intro-block-text">
-                <h2>Zet je <span>mening</span><br> om in <span>cash</span></h2>
+                <h2>Zet je <span class="bgline-1">mening</span><br> om in <span class="bgline-2">cash</span></h2>
                 <h3>Doe mee aan marktonderzoeken en verdien door je mening te geven</h3>
                 <div class="intro-block-points">
                     <p>Vergoeding tot wel €70</p>
@@ -164,21 +162,17 @@
                 </div>
                 <div class="intro-block-buttons">
                     <button>Respondent worden</button>
-                    <a>Als bedrijf aansluiten ></a>
+                    <a>Voor opdrachtgevers ></a>
                 </div>
             </div>
             <div class="intro-block-girl">
                 <img src="{{ asset('images/afbeeling-invorm-eerstevouw.png') }}" >
             </div>
-            
-            
-        </div>
-        <div class="how-block">
-            <div class="how-block-img">
-                <!-- <img src="{{ asset('images/afbeelding-hoewerkthet.png') }}" > -->
-            </div>
+        </section>
+        
+        <section class="how-block">
             <div class="how-block-text">
-                <h3 class="blue-grotesk">Respondent worden</h3>
+                <h3 class="blue-grotesk">RESPONDENT WORDEN</h3>
                 <h2 class="black-grostesk">Hoe werkt het</h2>
                 <p class="black-karla black-karla-bold">Voordat er een nieuw product uitkomt, of voordat er een reclame- of voorlichtingscampagne uitgebracht wordt, 
                     willen de makers hiervan graag weten wat u als consument hiervan vindt. Dit kan bijvoorbeeld een reclame- of 
@@ -191,10 +185,13 @@
                     duur kan variëren van 15 minuten tot maximaal 3 uur.
                 </p>
                     <a class="orange-grostesk" >Meer over respondenten ></a>
-
             </div>
-        </div> 
-        <div class="research-block">
+            <div class="how-block-img">
+                <!-- <img src="{{ asset('images/afbeelding-hoewerkthet.png') }}" > -->
+            </div>
+        </section> 
+
+        <section class="research-block">
             <div class="research-block-container">
                 <div class="research-block-text">
                     <h2>Marktonderzoek</h2>
@@ -205,11 +202,12 @@
             <div class="center">
                 <a class="research-block-more orange-grostesk">Meer marktonderzoeken ></a>
             </div>
-        </div>
-        <div class="about-block">
+        </section>
+
+        <section class="about-block">
             <div class="about-block-text">
-                <h3 class="orange-title">Wie zijn wij</h3>
-                <h2 class="black-grostesk">Over Bureau Profiel</h2>
+                <h3 class="orange-title">WIE ZIJN WIJ</h3>
+                <h2 class="black-grostesk">Over <span class="bgline-3">Bureau Profiel</span></h2>
                 <p class="black-karla black-karla-bold">Wij houden ons elke dag bezig met werving en selectie van respondenten, zowel consumenten als Business-to-Business. 
                     Zo hebben we een database met respondenten die wij kunnen inzetten bij een marktonderzoek.</p>
                 <p class="black-karla spacing">
@@ -229,13 +227,35 @@
             <div class="about-block-img">
                 <!-- <img src="{{ asset('images/overbureauprofiel.jpg') }}"> -->
             </div>
-        </div>
-        <div class="review-block">
+        </section>
+        <section class="review-block">
 
-        </div>
-        <div class="company-block">
-
-        </div>
+        </section>
+        <section class="company-block">
+            <div class="company-block-text">
+                <h3 class="orange-title">RESPONDENTEN NODIG?</h3>
+                <h2 class="white-grostesk">Voor de opdrachtgever</h2>
+                <p class="white-karla white-karla-bold">Ons promotieteam rekruteerd continu verse respondenten middels veldwerk. De respondenten zijn 
+                    zodoende persoonlijk goed geïnformeerd en wij kunnen hen kwalificeren als zeer betrouwbaar.</p>
+                <p class="white-karla spacing">Wij leveren respondenten uit Amsterdam en directe omgeving voor allerlei kwalitatieve 
+                onderzoeken. Het aanbod is zeer breed. Wij hebben alle doelgroepen in een eigen database o.a. 
+                volwassenen, jongeren, kinderen, westerse Nederlanders, niet-westerse Nederlanders, hoog en 
+                lager opgeleiden, zelfstandig ondernemers enzovoort. Tevens kunnen wij ook selecties uitvoeren 
+                middels aangeleverde lijsten. </p>
+                    <p class="white-karla">Wij doen met regelmaat diverse soorten onderzoeken zoals:</p>
+                    <ul>
+                    <li>Single interview</li>
+                    <li>Groepsdiscussies</li>
+                    <li>In home visits</li>
+                    <li>Go shoppings</li>
+                    <li>Multiculturele groepen</li>
+                </ul>
+                <a class="research-block-more orange-grostesk">Meer voor opdrachtgevers ></a>
+            </div>
+            <div class="company-block-img">
+                
+            </div>
+        </section>
 
         <div class="register">
             <div class="register-form">

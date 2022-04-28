@@ -1,11 +1,14 @@
 .intro-block {
-  background-color: #ece9e958;
-  height: 94rem;
   position: relative;
   height: 75rem;
-  padding-top: 10rem;
-  padding-left: 7vw;
-  padding: 10rem 5vw;
+  padding: 5rem 7vw;
+}
+
+@media (min-width: 40em) {
+  .intro-block {
+    background-color: #ece9e958;
+    padding: 10rem 7vw;
+  }
 }
 
 .intro-block-text {
@@ -24,14 +27,13 @@
 
 .intro-block-text h2 {
   font-family: "Space Grotesk", sans-serif;
-  font-size: 9.5rem;
+  font-size: clamp(5rem, 5vw, 9.5rem);
   font-weight: 500;
-  margin-bottom: 1.5rem;
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 40em) {
   .intro-block-text h2 {
-    font-size: 7rem;
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -39,12 +41,33 @@
   font-weight: 700;
 }
 
+.intro-block-text h2 .bgline-1 {
+  background-image: url(../images/streep-mening.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.intro-block-text h2 .bgline-2 {
+  background-image: url(../images/streep-cash.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
 .intro-block-text h3 {
   font-family: "Karla";
   font-weight: 700;
   font-size: 3.2rem;
+  font-size: clamp(2rem, 5vw, 3.2rem);
   color: #6ec5ed;
-  margin-bottom: 4.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 40em) {
+  .intro-block-text h3 {
+    margin-bottom: 4.5rem;
+  }
 }
 
 .intro-block-points {
@@ -61,18 +84,24 @@
 }
 
 .intro-block-points p {
-  width: calc(100% / 2 - 5rem);
   font-family: "Karla";
   font-weight: 500;
   font-size: 1.8rem;
   position: relative;
-  margin-left: 5rem;
+  margin-left: 3.5rem;
+}
+
+@media (min-width: 40em) {
+  .intro-block-points p {
+    margin-bottom: 0 !important;
+    width: calc(100% / 2 - 3.5rem);
+  }
 }
 
 .intro-block-points p::before {
   content: " ";
   position: absolute;
-  left: -1.5rem;
+  left: -3rem;
   top: 0.9rem;
   background-image: url(../images/bulletpoint-black.svg);
   background-size: 100% 100%;
@@ -81,7 +110,13 @@
 }
 
 .intro-block-buttons {
-  margin-top: 6rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 40em) {
+  .intro-block-buttons {
+    margin-top: 6rem;
+  }
 }
 
 .intro-block-buttons button {
@@ -91,14 +126,21 @@
   border: none;
   width: 32.5rem;
   height: 4rem;
+  font-family: "Space Grotesk";
 }
 
 .intro-block-buttons a {
-  margin-left: 5rem;
   color: #ea5b3f !important;
   font-family: "Space Grotesk";
   font-weight: 600;
   font-size: 2.5rem;
+}
+
+@media (min-width: 40em) {
+  .intro-block-buttons a {
+    margin-top: 1rem;
+    margin-left: 5rem;
+  }
 }
 
 .intro-block-girl {
@@ -106,12 +148,19 @@
   overflow: hidden;
   position: absolute;
   right: 0;
-  top: -7rem;
+  bottom: -5rem;
+}
+
+@media (min-width: 40em) {
+  .intro-block-girl {
+    bottom: unset;
+    top: -7rem;
+  }
 }
 
 .intro-block-girl img {
   margin-left: 40%;
-  height: 950px;
+  max-height: 950px;
 }
 
 @media (min-width: 1025px) and (max-width: 1200px) {
@@ -126,36 +175,40 @@
   }
 }
 
-@media (min-width: 481px) and (max-width: 768px) {
+@media (min-width: 0px) and (max-width: 768px) {
   .intro-block-girl img {
-    height: 500px;
+    height: 400px;
   }
 }
 
-.how-block {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+@media (min-width: 40em) {
+  .how-block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .how-block-img {
   min-width: 42.5vw;
-  height: 700px;
+  height: 50em;
   background-image: url(../images/afbeelding-hoewerkthet.png);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
 }
 
-.how-block-img img {
-  width: 100%;
+@media (min-width: 40em) {
+  .how-block-img {
+    height: 70em;
+  }
 }
 
 .how-block-text {
@@ -182,7 +235,15 @@
   color: #181818 !important;
   font-family: "Space Grotesk";
   font-weight: 700;
-  font-size: 5.5rem;
+  font-size: clamp(4rem, 5vw, 5.5rem);
+  margin-bottom: 2rem;
+}
+
+.white-grostesk {
+  color: #fff !important;
+  font-family: "Space Grotesk";
+  font-weight: 700;
+  font-size: clamp(4rem, 5vw, 5.2rem);
   margin-bottom: 2rem;
 }
 
@@ -194,6 +255,17 @@
 }
 
 .black-karla-bold {
+  font-weight: 700;
+}
+
+.white-karla {
+  color: #fff !important;
+  font-family: "Karla";
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.white-karla-bold {
   font-weight: 700;
 }
 
@@ -218,9 +290,8 @@
 .research-block-container {
   background-color: #6ec5ed;
   padding-top: 4rem;
-  padding-left: 7vw;
-  width: 100vw;
-  height: 40rem;
+  max-width: 100vw;
+  min-height: 40rem;
 }
 
 .research-block-container h2 {
@@ -249,20 +320,37 @@
 
 .research-block-more {
   margin-top: 2rem;
-  margin-bottom: 10rem;
+  margin-bottom: 6rem;
 }
 
-.about-block {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+@media (min-width: 40em) {
+  .research-block-more {
+    margin-bottom: 10rem;
+  }
+}
+
+@media (min-width: 40em) {
+  .about-block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 40em) {
+  .about-block * {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+  }
 }
 
 .about-block-text {
@@ -272,15 +360,27 @@
 
 .about-block-text .spacing {
   margin-top: 1.5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 40em) {
+  .about-block-text .spacing {
+    margin-bottom: 3rem;
+  }
+}
+
+.about-block-text .bgline-3 {
+  background-image: url(../images/streep-bureauprofiel.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 .about-block-img {
-  min-width: 42.5vw;
   min-height: 450px;
   background-image: url(../images/overbureauprofiel.jpg);
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -291,7 +391,7 @@
 
 .about-block ul li {
   position: relative;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.9rem;
   margin-left: 2rem;
   color: #181818;
   font-family: "Karla";
@@ -304,9 +404,67 @@
   position: absolute;
   left: -1.5rem;
   top: 0.6rem;
+  background-image: url(../images/bulletpoint-yellow.svg);
+  background-size: 100% 100%;
+  height: 1rem;
+  width: 1rem;
+}
+
+.company-block {
+  color: #fff;
+}
+
+@media (min-width: 40em) {
+  .company-block {
+    max-width: 50vw;
+  }
+}
+
+.company-block-text {
+  background-color: #6ec5ed;
+  padding: 5rem 2vw 5rem 7vw;
+}
+
+.company-block-text .spacing {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 40em) {
+  .company-block-text .spacing {
+    margin-bottom: 3rem;
+  }
+}
+
+.company-block-text ul {
+  margin-top: 2rem;
+  list-style: none;
+}
+
+.company-block-text ul li {
+  position: relative;
+  margin-left: 2rem;
+  font-family: "Karla";
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 0.9rem;
+}
+
+.company-block-text ul li::before {
+  content: " ";
+  position: absolute;
+  left: -1.5rem;
+  top: 0.6rem;
   background-image: url(../images/bulletpoint-orange.svg);
   background-size: 100% 100%;
   height: 1rem;
   width: 1rem;
+}
+
+.company-block-img {
+  background-image: url(../images/afbeelding-bedrijven.png);
+  background-size: 100% 100%;
+  min-height: 300px;
+  width: 100%;
 }
 /*# sourceMappingURL=home.css.map */
