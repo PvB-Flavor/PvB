@@ -15,13 +15,11 @@ div.dt-button-info {
   margin-left: -200px;
   background-color: white;
   border: 2px solid #111;
-  -webkit-box-shadow: 3px 4px 10px 1px rgba(0, 0, 0, 0.3);
-          box-shadow: 3px 4px 10px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 4px 10px 1px rgba(0, 0, 0, 0.3);
   border-radius: 3px;
   text-align: center;
   z-index: 21;
 }
-
 div.dt-button-info h2 {
   padding: 0.5em;
   margin: 0;
@@ -29,7 +27,6 @@ div.dt-button-info h2 {
   border-bottom: 1px solid #ddd;
   background-color: #f3f3f3;
 }
-
 div.dt-button-info > div {
   padding: 1em;
 }
@@ -69,13 +66,11 @@ span.dt-button-spacer {
   margin: 0.5em;
   white-space: nowrap;
 }
-
 span.dt-button-spacer.bar {
   border-left: 1px solid rgba(0, 0, 0, 0.3);
   vertical-align: middle;
   padding-left: 0.5em;
 }
-
 span.dt-button-spacer.bar:empty {
   height: 1em;
   width: 1px;
@@ -88,15 +83,12 @@ div.dt-button-collection span.dt-button-spacer {
   text-align: center;
   margin: 0.5em 0;
 }
-
 div.dt-button-collection span.dt-button-spacer:empty {
   height: 0;
   width: 100%;
 }
-
 div.dt-button-collection span.dt-button-spacer.bar {
   border-left: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   padding-left: 0;
-}
-/*# sourceMappingURL=common.css.map */
+}/*# sourceMappingURL=common.css.map */
