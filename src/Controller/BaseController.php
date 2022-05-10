@@ -53,4 +53,17 @@ class BaseController extends AbstractController
 
         return $this->render('base/contact.html.twig', get_defined_vars());
     }
+
+    /**
+     * @Route("/respondent", name="app_respondent")
+     *
+     * @return Response
+     */
+    public function respondent(): Response
+    {
+        $email = null;
+        if ($this->getUser()) $email = $this->getUser()->getUserIdentifier();
+
+        return $this->render('base/respondent.html.twig', get_defined_vars());
+    }
 }
