@@ -1,0 +1,26 @@
+@import "mixins.scss";
+
+.respondent {
+  .split {
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 40em) {
+      align-items: center;
+      flex-direction: row;
+      * {
+        flex-basis: 100%;
+      }
+    }
+  }
+  &-how-block {
+    @media (min-width: 40em) {
+    }
+
+    &-text {
+      margin-inline: auto;
+      width: min(90%, 67rem);
+    }
+    &-img {
+    }
+  }
+}

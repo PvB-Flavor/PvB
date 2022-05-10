@@ -1,20 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&display=swap");
 
-* {
-  margin: 0px;
-  padding: 0px;
-  list-style: none;
-  text-decoration: none;
-}
-html {
-  scroll-behavior: smooth;
-  font-size: 62.5%;
-}
-body {
-
-}
-
 .admin-notice {
   max-width: 300px;
   width: 100%;
@@ -37,7 +23,6 @@ body {
 
 .admin-notice div {
   display: flex;
-
 }
 
 .admin-notice div button {

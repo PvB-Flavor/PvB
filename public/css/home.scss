@@ -1,3 +1,6 @@
+@import "mixins.scss";
+@import "footer.scss";
+
 .intro-block {
   //   min-height: 94rem;
   position: relative;
@@ -57,7 +60,7 @@
     h3 {
       font-family: "Karla";
       font-weight: 700;
-      font-size: 3.2rem;
+      // font-size: 3.2rem;
       font-size: clamp(2rem, 5vw, 3.2rem);
       color: #6ec5ed;
       margin-bottom: 2rem;
@@ -74,7 +77,8 @@
     p {
       font-family: "Karla";
       font-weight: 500;
-      font-size: 1.8rem;
+      // font-size: 1.8rem;
+      font-size: clamp(1.6rem, 5vw, 1.8rem);
       position: relative;
       margin-left: 3.5rem;
       @media (min-width: 40em) {
@@ -103,7 +107,7 @@
     button {
       background-color: #ea5b3f;
       padding-inline: 1rem;
-      font-size: 2.5rem;
+      font-size: clamp(2rem, 5vw, 2.5rem);
       color: #fff;
       border: none;
 
@@ -115,7 +119,7 @@
       color: #ea5b3f !important;
       font-family: "Space Grotesk";
       font-weight: 600;
-      font-size: 2.5rem;
+      font-size: clamp(2rem, 5vw, 2.5rem);
       @media (min-width: 40em) {
         margin-left: 5rem;
       }
@@ -204,61 +208,6 @@
       margin-bottom: 3rem;
     }
   }
-
-  .blue-grotesk {
-    color: #6ec5ed !important;
-    font-family: "Space Grotesk";
-    font-weight: 500;
-    font-size: 2rem;
-  }
-}
-.black-grostesk {
-  color: #181818 !important;
-  font-family: "Space Grotesk";
-  font-weight: 700;
-  font-size: clamp(4rem, 5vw, 5.5rem);
-  margin-bottom: 2rem;
-}
-.white-grostesk {
-  color: #fff !important;
-  font-family: "Space Grotesk";
-  font-weight: 700;
-  font-size: clamp(4rem, 5vw, 5.2rem);
-  margin-bottom: 2rem;
-}
-.black-karla {
-  color: #181818 !important;
-  font-family: "Karla";
-  font-weight: 500;
-  font-size: 1.5rem;
-  &-light {
-    font-weight: 400;
-  }
-  &-bold {
-    font-weight: 700;
-  }
-}
-
-.white-karla {
-  color: #fff !important;
-  font-family: "Karla";
-  font-weight: 500;
-  font-size: 1.5rem;
-  &-bold {
-    font-weight: 700;
-  }
-}
-.orange-grostesk {
-  color: #ea5b3f !important;
-  font-family: "Space Grotesk";
-  font-weight: 600;
-  font-size: 2.2rem;
-}
-.orange-title {
-  color: #ea5b3f !important;
-  font-family: "Space Grotesk";
-  font-weight: 500;
-  font-size: clamp(1.8rem, 3vw, 2rem);
 }
 
 .research-block {
@@ -274,13 +223,13 @@
       color: #ffffff;
       font-family: "Space Grotesk";
       font-weight: 700;
-      font-size: 4.8rem;
+      font-size: clamp(4.3rem, 5vw, 4.8rem);
     }
     p {
       color: #ffffff;
       font-family: "Space Grotesk";
       font-weight: 700;
-      font-size: 1.5rem;
+      font-size: clamp(1.3rem, 5vw, 1.5rem);
     }
   }
   .center {
@@ -351,6 +300,7 @@
       font-family: "Karla";
       font-weight: 700;
       font-size: 1.5rem;
+      font-size: clamp(1.3rem, 5vw, 1.5rem);
 
       &::before {
         content: " ";
@@ -402,6 +352,7 @@
         font-family: "Karla";
         font-weight: 700;
         font-size: 1.5rem;
+        font-size: clamp(1.3rem, 5vw, 1.5rem);
         margin-bottom: 0.9rem;
 
         &::before {

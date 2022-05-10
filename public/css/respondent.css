@@ -1,0 +1,109 @@
+/*------------------------------------*\
+:    Mixins - Variables
+\*------------------------------------*/
+/*------------------------------------*\
+:    Mixins - Fonts
+\*------------------------------------*/
+.blue-grotesk {
+  color: #6ec5ed !important;
+  font-family: "Space Grotesk";
+  font-weight: 500;
+  font-size: clamp(1.7rem, 5vw, 2rem);
+}
+
+.black-grostesk {
+  color: #181818 !important;
+  font-family: "Space Grotesk";
+  font-weight: 700;
+  font-size: clamp(4rem, 5vw, 5.5rem);
+  margin-bottom: 2rem;
+}
+
+.white-grostesk {
+  color: #fff !important;
+  font-family: "Space Grotesk";
+  font-weight: 700;
+  font-size: clamp(4rem, 5vw, 5.2rem);
+  margin-bottom: 2rem;
+}
+
+.black-karla {
+  color: #181818 !important;
+  font-family: "Karla";
+  font-weight: 500;
+  font-size: clamp(1.2rem, 5vw, 1.5rem);
+}
+.black-karla-light {
+  font-weight: 400;
+}
+.black-karla-bold {
+  font-weight: 700;
+}
+
+.white-karla {
+  color: #fff !important;
+  font-family: "Karla";
+  font-weight: 500;
+  font-size: clamp(1.3rem, 5vw, 1.5rem);
+}
+.white-karla-bold {
+  font-weight: 700;
+}
+
+.orange-grostesk {
+  color: #ea5b3f !important;
+  font-family: "Space Grotesk";
+  font-weight: 600;
+  font-size: clamp(2rem, 5vw, 2.2rem);
+}
+
+.orange-title {
+  color: #ea5b3f !important;
+  font-family: "Space Grotesk";
+  font-weight: 500;
+  font-size: clamp(1.8rem, 3vw, 2rem);
+}
+
+/*------------------------------------*\
+:    Mixins - Basic
+\*------------------------------------*/
+* {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Space Grotesk";
+}
+
+img {
+  width: 100%;
+}
+
+/*------------------------------------*\
+:    Mixins - Media Queries
+\*------------------------------------*/
+.respondent .split {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 40em) {
+  .respondent .split {
+    align-items: center;
+    flex-direction: row;
+  }
+  .respondent .split * {
+    flex-basis: 100%;
+  }
+}
+.respondent-how-block-text {
+  margin-inline: auto;
+  width: min(90%, 67rem);
+}/*# sourceMappingURL=respondent.css.map */

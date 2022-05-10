@@ -1,0 +1,194 @@
+/*------------------------------------*\
+:    Mixins - Variables
+\*------------------------------------*/
+$navbar-width: 35rem;
+
+// Variables color
+$darkblue: #001858;
+$lightblue: #6ec5ed;
+$orange: #ea5b3f;
+$black: #181818;
+$grey: #ece9e958;
+$white: #fff;
+
+/*------------------------------------*\
+:    Mixins - Fonts
+\*------------------------------------*/
+// @font-face {
+//   font-family: "Gilroy";
+//   src: url("/fonts/Gilroy-Extrabold.otf");
+// }
+// @font-face {
+//   font-family: "LatoBold";
+//   src: url("/fonts/Lato-Bold.ttf");
+// }
+// @font-face {
+//   font-family: "Lato";
+//   src: url("/fonts/Lato-Regular.ttf");
+// }
+// @font-face {
+//   font-family: "LatoThin";
+//   src: url("/fonts/Lato-Thin.ttf");
+// }
+
+.blue-grotesk {
+  color: #6ec5ed !important;
+  font-family: "Space Grotesk";
+  font-weight: 500;
+  font-size: clamp(1.7rem, 5vw, 2rem);
+}
+
+.black-grostesk {
+  color: #181818 !important;
+  font-family: "Space Grotesk";
+  font-weight: 700;
+  font-size: clamp(4rem, 5vw, 5.5rem);
+  margin-bottom: 2rem;
+}
+.white-grostesk {
+  color: #fff !important;
+  font-family: "Space Grotesk";
+  font-weight: 700;
+  font-size: clamp(4rem, 5vw, 5.2rem);
+  margin-bottom: 2rem;
+}
+.black-karla {
+  color: #181818 !important;
+  font-family: "Karla";
+  font-weight: 500;
+  font-size: clamp(1.2rem, 5vw, 1.5rem);
+  &-light {
+    font-weight: 400;
+  }
+  &-bold {
+    font-weight: 700;
+  }
+}
+
+.white-karla {
+  color: #fff !important;
+  font-family: "Karla";
+  font-weight: 500;
+  font-size: clamp(1.3rem, 5vw, 1.5rem);
+  &-bold {
+    font-weight: 700;
+  }
+}
+.orange-grostesk {
+  color: #ea5b3f !important;
+  font-family: "Space Grotesk";
+  font-weight: 600;
+  font-size: clamp(2rem, 5vw, 2.2rem);
+}
+.orange-title {
+  color: #ea5b3f !important;
+  font-family: "Space Grotesk";
+  font-weight: 500;
+  font-size: clamp(1.8rem, 3vw, 2rem);
+}
+
+@mixin mainfont {
+  font-family: "";
+}
+
+/*------------------------------------*\
+:    Mixins - Basic
+\*------------------------------------*/
+
+* {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  text-decoration: none;
+}
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+body {
+  font-family: "Space Grotesk";
+}
+
+img {
+  width: 100%;
+}
+
+/*------------------------------------*\
+:    Mixins - Media Queries
+\*------------------------------------*/
+
+$large-desktop: 1680px;
+$medium-desktop: 1440px;
+$small-desktop: 1280px;
+$tablet-landscape: 1024px;
+$tablet-portrait: 800px;
+$tablet-portrait-small: 768px;
+$mobile-landscape: 700px;
+$mobile-portrait: 500px;
+$mobile-small: 320px;
+
+@mixin large-desktop {
+  @media (min-width: 0px) and(max-width: #{$large-desktop}) {
+    @content;
+  }
+}
+
+@mixin medium-desktop {
+  @media (min-width: 0px) and(max-width: #{$medium-desktop}) {
+    @content;
+  }
+}
+
+@mixin small-desktop {
+  @media (min-width: 0px) and(max-width: #{$small-desktop}) {
+    @content;
+  }
+}
+
+@mixin small-desktop-down {
+  @media (min-width: 0px) and(max-width: #{$small-desktop - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet-landscape {
+  @media (min-width: 0px) and(max-width: #{$tablet-landscape}) {
+    @content;
+  }
+}
+
+@mixin tablet-landscape-down {
+  @media (min-width: 0px) and(max-width: #{$tablet-landscape - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet-portrait {
+  @media (min-width: 0px) and(max-width: #{$tablet-portrait}) {
+    @content;
+  }
+}
+
+@mixin tablet-portrait-down {
+  @media (min-width: 0px) and(max-width: #{$tablet-portrait-small - 1px}) {
+    @content;
+  }
+}
+
+@mixin mobile-landscape {
+  @media (min-width: 0px) and(max-width: #{$mobile-landscape}) {
+    @content;
+  }
+}
+
+@mixin mobile-portrait {
+  @media (min-width: 0px) and(max-width: #{$mobile-portrait}) {
+    @content;
+  }
+}
+
+@mixin mobile-small {
+  @media (min-width: 0px) and(max-width: #{$mobile-small}) {
+    @content;
+  }
+}
