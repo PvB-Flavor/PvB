@@ -66,4 +66,17 @@ class BaseController extends AbstractController
 
         return $this->render('base/respondent.html.twig', get_defined_vars());
     }
+
+    /**
+     * @Route("/company", name="app_company")
+     *
+     * @return Response
+     */
+    public function company(): Response
+    {
+        $email = null;
+        if ($this->getUser()) $email = $this->getUser()->getUserIdentifier();
+
+        return $this->render('base/company.html.twig', get_defined_vars());
+    }
 }

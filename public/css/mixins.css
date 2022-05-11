@@ -15,7 +15,7 @@
   color: #181818 !important;
   font-family: "Space Grotesk";
   font-weight: 700;
-  font-size: clamp(3em, 5vw, 4.3em);
+  font-size: clamp(3em, 5vw, 4.5em);
   margin-bottom: 2rem;
 }
 
@@ -23,7 +23,7 @@
   color: #fff !important;
   font-family: "Space Grotesk";
   font-weight: 700;
-  font-size: clamp(3em, 5vw, 4.3em);
+  font-size: clamp(3em, 5vw, 4.5em);
   margin-bottom: 2rem;
 }
 
