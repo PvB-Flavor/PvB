@@ -2,17 +2,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&display=swap");
 
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   list-style: none;
   text-decoration: none;
 }
 html {
   scroll-behavior: smooth;
-  font-size: 62.5%;
 }
 body {
+  overflow-x: hidden;
+}
 
+img {
+  width: 100%;
 }
 
 .admin-notice {
@@ -32,12 +35,12 @@ body {
   font-weight: 800;
   color: white;
   margin: 0;
-  padding: 10px 0;
+  padding: 5px 0;
+  height: 35px;
 }
 
 .admin-notice div {
   display: flex;
-
 }
 
 .admin-notice div button {
@@ -81,6 +84,59 @@ body {
 .admin-notice a:hover {
   text-decoration: none;
   color: white;
+}
+
+.black-grostesk {
+  color: #181818 !important;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: clamp(4rem, 5vw, 5.5rem);
+  margin-bottom: 2rem;
+}
+
+.white-grostesk {
+  color: #fff !important;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: clamp(4rem, 5vw, 5.2rem);
+  margin-bottom: 2rem;
+}
+
+.black-karla {
+  color: #181818 !important;
+  font-family: "Karla", sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+.black-karla-light {
+  font-weight: 400;
+}
+.black-karla-bold {
+  font-weight: 700;
+}
+
+.white-karla {
+  color: #fff !important;
+  font-family: "Karla", sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+.white-karla-bold {
+  font-weight: 700;
+}
+
+.orange-grostesk {
+  color: #ea5b3f !important;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: 2.2rem;
+}
+
+.orange-title {
+  color: #ea5b3f !important;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.8rem, 3vw, 2rem);
 }
 
 @media only screen and (max-width: 900px) {

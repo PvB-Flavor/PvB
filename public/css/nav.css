@@ -1,0 +1,285 @@
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 90px;
+
+    background: white;
+
+    z-index: 1000;
+}
+
+.nav-logo {
+    position: absolute;
+    left: 80px;
+    top: 20px;
+}
+
+.nav-logo img {
+    width: 180px;
+}
+
+.nav-pages {
+    float: right;
+    margin-right: 220px;
+}
+
+.nav-page {
+    display: inline-block;
+    margin: 30px 25px;
+    height: 30px;
+    font-family: "Karla", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.nav-page a {
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+.nav-page a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-page a:hover::after {
+    position: absolute;
+    top: -10px;
+    left: -15px;
+
+    width: calc(100% + 30px);
+    height: 30px;
+    content: "";
+    background: url('/images/orange-bar.svg');
+}
+
+.nav-page-active a::after {
+    position: absolute;
+    top: -10px;
+    left: -15px;
+
+    width: calc(100% + 30px);
+    height: 30px;
+    content: "";
+    background: url('/images/orange-bar.svg');
+}
+
+.nav-cta {
+    position: absolute;
+    top: 28px;
+    right: 55px;
+    width: 140px;
+    height: 30px;
+}
+
+.nav-cta button, .nav-cta button:active {
+    width: 100%;
+    height: 100%;
+    background: #EA5B3F;
+    color: white;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 600;
+    border: 0;
+    outline: 0 !important;
+    cursor: pointer;
+}
+
+.nav-mobile-open {
+    display: none;
+
+    position: absolute;
+    width: 30px;
+    height: 30px;
+
+    top: 25px;
+    right: 15px;
+
+    cursor: pointer;
+}
+
+.nav-mobile {
+    position: fixed;
+
+    top: 0;
+    left: -5vw;
+
+    width: 110vw;
+    height: fit-content;
+    margin: 0;
+    padding: 40px 20px 20px;
+    text-align: center;
+    overflow: hidden;
+
+    transition: transform 0.2s ease-in-out;
+    transform: translateY(calc(-100% - 150px)) rotate(-3deg);
+
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+
+    background: white;
+
+    z-index: 1001;
+}
+
+.nav-mobile * {
+    transform: rotate(1.5deg) !important;
+}
+
+.nav-mobile-pages {
+    margin: 0;
+}
+
+.nav-mobile-page {
+    font-size: 1.4em;
+    font-weight: 900;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.nav-mobile-page a {
+    position: relative;
+    color: black;
+    text-decoration: none;
+}
+
+.nav-mobile-page a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.nav-mobile-page a:hover::after {
+    position: absolute;
+    top: -10px;
+    left: -15px;
+
+    width: calc(100% + 30px);
+    height: 40px;
+    content: "";
+    background: url('/images/orange-bar.svg');
+}
+
+.nav-mobile-page-active {
+    text-decoration: underline;
+}
+
+.nav-mobile-circle {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    bottom: -125px;
+    right: -125px;
+}
+
+.nav-mobile-close, .nav-mobile-close:active {
+    width: 50px;
+    height: 50px;
+    background: none;
+    border: 0;
+    outline: 0 !important;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.nav-mobile-close:hover svg {
+    fill: #EA5B3F;
+}
+
+@media only screen and (max-width: 1200px) {
+    nav {
+        height: 80px;
+    }
+
+    .nav-logo {
+        top: 20px;
+        left: 15px;
+    }
+
+    .nav-logo img {
+        width: 120px;
+    }
+
+    .nav-pages {
+        display: none;
+    }
+
+    .nav-cta {
+        right: 70px;
+    }
+
+    .nav-mobile-open {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 1180px) {
+
+}
+
+@media only screen and (max-width: 700px) {
+    nav {
+        height: 60px;
+    }
+
+    .nav-logo img {
+        width: 110px;
+    }
+
+    .nav-logo {
+        top: 10px;
+    }
+
+    .nav-cta {
+        top: 18px;
+        right: 60px;
+        height: 25px;
+        width: 120px;
+    }
+
+    .nav-cta button {
+        font-size: 0.9em;
+    }
+
+    .nav-mobile-open {
+        width: 25px;
+        height: 25px;
+
+        top: 16px;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    nav {
+        height: 50px;
+    }
+
+    .nav-logo {
+        top: 10px;
+        left: 15px;
+    }
+
+    .nav-logo img {
+        width: 85px;
+    }
+
+    .nav-cta {
+        top: 10px;
+        height: 20px;
+        width: 100px;
+        right: 50px;
+    }
+
+    .nav-cta button {
+        font-size: 0.8em;
+    }
+
+    .nav-mobile-open {
+        width: 20px;
+        height: 20px;
+
+        top: 12px;
+    }
+}

@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Onderzoeken - Bureau Profiel
+{% endblock %}
+
+{% block main %}
+    {{ parent() }}
+
+    <div class="researches-block">
+        <h3 class="research-block-title"><span class="bgline-1">Nieuwe</span> onderzoeken</h3>
+        <p class="research-block-subtitle">Wij zijn opzoek naar respondenten voor de volgende onderzoeken.</p>
+
+        <div class="researches-grid">
+            {% for research in researchesOngoing %}
+                <div class="researches">
+                    <div class="researches-title">
+                        <h3 style="color: #EA5B3F;">WIJ ZIJN OPZOEK NAAR</h3>
+                        <span>{{ research.title }}</span>
+                    </div>
+                    <div class="researches-image">
+                        <img class="researches-main-image" src="{{ research.pathToImage }}" alt="research image">
+                    </div>
+                    <img class="researches-company-image" src="{{ research.pathToCompanyImage }}" alt="research image">
+                </div>
+            {% endfor %}
+        </div>
+
+        <h3 class="research-block-title"><span class="bgline-2">Afgeronde</span> onderzoeken</h3>
+        <p class="research-block-subtitle">Reeds voldane onderzoeken waarbij respondenten van Bureau Profiel aan hebben meegewerkt.</p>
+
+        <div class="researches-grid">
+            {% for research in researchesDone %}
+                <div class="researches">
+                    <div class="researches-title">
+                        <h3 style="color: #6EC5ED;">AFGEROND ONDERZOEK</h3>
+                        <span>{{ research.title }}</span>
+                    </div>
+                    <div class="researches-image">
+                        <img class="researches-main-image" src="{{ research.pathToImage }}" alt="research image">
+                    </div>
+                    <img class="researches-company-image" src="{{ research.pathToCompanyImage }}" alt="research image">
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

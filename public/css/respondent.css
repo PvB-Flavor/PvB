@@ -1,0 +1,134 @@
+html {
+    font-size: 62.5%;
+}
+
+.respondent img {
+    width: 100%;
+}
+.respondent .split {
+    display: flex;
+    flex-direction: column;
+}
+.respondent .split-reverse {
+    flex-direction: column-reverse;
+}
+@media (min-width: 40em) {
+    .respondent .split {
+        align-items: center;
+        flex-direction: row;
+    }
+    .respondent .split * {
+        flex-basis: 100%;
+    }
+}
+.respondent .content-padding {
+    padding-inline: clamp(3rem, 8vw, 7rem);
+    margin-top: 5rem;
+    margin-bottom: 4rem;
+}
+@media (min-width: 40em) {
+    .respondent .content-padding {
+        margin: 0;
+    }
+}
+@media (min-width: 40em) {
+    .respondent-how-block {
+        margin-bottom: 7rem;
+    }
+}
+.respondent-how-block-text .bgline-pink {
+    background-image: url(../images/hoe-werkt-dat-mark.svg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+}
+.respondent-why-block {
+    background-color: #6ec5ed;
+}
+@media (min-width: 40em) {
+    .respondent-why-block {
+        margin-bottom: 7rem;
+    }
+}
+@media (min-width: 40em) {
+    .respondent-cash-block {
+        margin-bottom: 7rem;
+    }
+}
+.respondent-cash-block-img .mobile {
+    display: block;
+}
+@media (min-width: 40em) {
+    .respondent-cash-block-img .mobile {
+        display: none;
+    }
+}
+.respondent-cash-block-img .desktop {
+    display: none;
+}
+@media (min-width: 40em) {
+    .respondent-cash-block-img .desktop {
+        display: flex;
+    }
+}
+@media (min-width: 40em) {
+    .respondent-company-block {
+        margin-bottom: 7rem;
+    }
+}
+.respondent-company-block-img {
+    background-color: rgba(236, 233, 233, 0.3450980392);
+}
+.respondent-company-block-text .bgline-blue {
+    background-image: url(../images/bedrijven-mark.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+@media (min-width: 40em) {
+    .respondent-trust-block {
+        margin-bottom: 7rem;
+    }
+}
+.respondent-cta-block {
+    background-color: #6ec5ed;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 2rem;
+}
+@media (min-width: 40em) {
+    .respondent-cta-block {
+        background-color: unset;
+    }
+}
+.respondent-cta-block .content-padding {
+    background-color: #6ec5ed;
+}
+@media (min-width: 40em) {
+    .respondent-cta-block .content-padding {
+        padding-top: 3rem;
+        padding-bottom: 2rem;
+    }
+}
+@media (min-width: 40em) {
+    .respondent-cta-block-text {
+        max-width: 65rem;
+    }
+    .respondent-cta-block-text h2 {
+        font-size: clamp(2.7em, 5vw, 3.5em);
+    }
+}
+.respondent-cta-block-text button {
+    background: #ea5b3f;
+    font-size: 18px;
+    color: #fff;
+    border: none;
+    padding: 4px 20px;
+    outline: 0 !important;
+    cursor: pointer;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    font-family: "Space Grotesk";
+}

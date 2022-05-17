@@ -1,0 +1,98 @@
+.researches-block {
+    width: 100vw;
+    padding: 150px 5vw 10rem;
+}
+
+.researches-block .bgline-1 {
+    background-image: url(../images/streep-cash.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.researches-block .bgline-2 {
+    background-image: url(../images/bedrijven-mark.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.research-block-title {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(2.25rem, 3.7vw, 7rem);
+    font-weight: 500;
+    width: 100%;
+}
+
+.research-block-subtitle {
+    font-family: "Karla", sans-serif;
+    font-weight: 700;
+    max-width: 900px;
+    width: 100%;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+}
+
+.researches-grid {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 150px;
+}
+
+.researches {
+    position: relative;
+    width: 500px;
+    margin: 40px 10px 0 0;
+    height: 450px;
+    background: white;
+    box-shadow: 0 0 20px #929EA32E;
+    overflow: hidden;
+}
+
+.researches-title {
+    width: 100%;
+    height: 125px;
+    padding: 20px;
+    font-family: "Space Grotesk";
+}
+
+.researches-title h3 {
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.researches-title span {
+    font-weight: 700;
+    font-size: 1.5rem;
+    word-break: break-word;
+}
+
+.researches-image {
+    width: 100%;
+    height: 275px;
+}
+
+.researches-main-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.researches-company-image {
+    position: absolute;
+    width: 40%;
+    height: 40px;
+    left: 0;
+    bottom: 0;
+    object-fit: contain;
+    object-position: left;
+}
+
+@media only screen and (max-width: 900px) {
+    .research {
+        height: 300px;
+        margin-right: 0;
+    }
+}
+

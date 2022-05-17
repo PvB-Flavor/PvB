@@ -1,0 +1,377 @@
+.contact-block {
+    width: 100vw;
+    background: rgba(236, 233, 233, 0.3450980392);
+    padding: 150px 5vw 10rem;
+
+    display: flex;
+
+    max-height: 650px;
+
+    margin-bottom: 225px;
+}
+
+.contact-block-left {
+    width: 50%;
+
+}
+
+.contact-block-right {
+    width: 50%;
+    transform: translateX(5vw);
+}
+
+.contact-block-left:after {
+    content: "";
+    background-image: url(../images/puntjes-links-eerstevouw.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    width: 100%;
+    height: 600px;
+    position: absolute;
+    left: -60%;
+    top: 20%;
+
+    z-index: -1;
+}
+
+.contact-block-right img {
+    object-position: center;
+    object-fit: cover;
+    width: 100%;
+    height: 450px;
+}
+
+.contact-block-right {
+    position: relative;
+    padding-left: 50px;
+}
+
+.contact-block-info {
+    position: absolute;
+    width: 300px;
+    height: 250px;
+    background: #6EC5ED;
+    right: 7.5vw;
+    bottom: -200px;
+    padding: 30px 20px 30px 30px;
+    overflow: hidden;
+}
+
+.contact-block-info svg {
+    width: 70%;
+    margin-bottom: 10px;
+}
+
+.contact-block-info p {
+    color: white;
+    font-family: "Karla", sans-serif;
+    font-weight: 400;
+    margin: 2px 0;
+    padding: 0;
+    word-break: break-all;
+}
+
+.contact-nmmr {
+    margin: 10px 0 0 2rem !important;
+    position: relative;
+}
+.contact-nmmr::before {
+    content: " ";
+    position: absolute;
+    left: -2rem;
+    top: 0.3rem;
+    background-image: url(../images/bel-icoon-wit.svg);
+    background-size: 100% 100%;
+    height: 1rem;
+    width: 1rem;
+}
+.contact-mail {
+    margin-left: 2rem !important;
+    position: relative;
+}
+.contact-mail::before {
+    content: " ";
+    position: absolute;
+    left: -2rem;
+    top: 0.3rem;
+    background-image: url(../images/mail-icoon-wit.svg);
+    background-size: 100% 100%;
+    height: 1rem;
+    width: 1rem;
+}
+
+.contact-block-text h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(2.25rem, 3.7vw, 7rem);
+    font-weight: 500;
+}
+
+.contact-block-text h3 {
+    font-family: "Karla", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.25rem, 3vw, 2.25rem);
+    color: #6ec5ed;
+    margin-bottom: 1.5rem;
+    max-width: 700px;
+}
+
+.contact-block-text p {
+    font-family: "Karla", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+}
+
+.contact-block-text a {
+    color: #EA5B3F;
+    text-decoration: underline;
+}
+
+.contact-block-text a:hover {
+    color: #EA5B3F;
+}
+
+.contact-block-text h2 .bgline-1 {
+    background: url(../images/streep-mening.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.contact-block-text h2 .bgline-2 {
+    background-image: url(../images/streep-cash.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.contact-success {
+    color: white;
+    padding: 10px 15px;
+    width: 100%;
+    background: #6EC5ED;
+    font-family: "Karla", sans-serif;
+    font-weight: 700;
+    text-align: center;
+}
+
+.contact-block-form {
+    background: #ECE9E9;
+    width: 100%;
+    padding: 30px;
+    margin-top: 30px;
+}
+
+.contact-block-form label {
+    display: block;
+}
+
+.contact-block-form input, .contact-block-form textarea {
+    width: 100%;
+    height: 48px;
+    max-height: 200px;
+    padding: 0 15px;
+    background: white;
+    color: black;
+    font-family: "Karla", sans-serif;
+    font-weight: 400;
+    border: 0;
+    outline: 0 !important;
+    margin-bottom: 15px;
+}
+
+.contact-block-form textarea {
+    padding: 15px;
+    min-height: 100px;
+    margin-bottom: 0;
+}
+
+.contact-block-form ul {
+    color: red;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-block-form button {
+    background: #ea5b3f;
+    font-size: 20px;
+    color: #fff;
+    border: none;
+    padding: 5px 15px;
+    outline: 0 !important;
+    cursor: pointer;
+    margin-top: 10px;
+
+    width: fit-content;
+    font-family: "Space Grotesk";
+}
+
+.faq-block {
+    width: 100vw;
+    padding: 5rem 5vw 5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.faq-block:before {
+    content: "";
+    background-image: url(../images/puntjes-links-eerstevouw.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 500px;
+    height: 700px;
+    position: absolute;
+    top: 0;
+    right: -250px;
+}
+
+.faq-block-text h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(2.5rem, 3.2vw, 5rem);
+    font-weight: 500;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.faq-block-text h2 .bgline-1 {
+    background-image: url(../images/streep-cash.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.faq-block-text p {
+    font-family: "Karla", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    width: 1000%;
+    max-width: 600px;
+    margin: 40px 0;
+}
+
+.faq-block-faqs {
+    width: 100%;
+    max-width: 800px;
+}
+
+.faq-block-faq {
+    height: 50px;
+    overflow: hidden;
+    transition: all 0.5s;
+    margin-bottom: 15px;
+}
+
+.faq-block-faq-top {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    background: #D7EEF8;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    cursor: pointer;
+}
+
+.faq-block-faq-top h4 {
+    width: calc(100% - 5rem);
+    padding-left: 30px;
+    text-align: left;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 900;
+    margin: 0;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+}
+
+.faq-block-faq-top img {
+    right: 40px;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 10px;
+    transition: all 0.5s;
+}
+
+.faq-block-faq-content {
+    width: 100%;
+    background: #6EC5ED;
+    padding: 25px;
+    font-family: "Karla", sans-serif;
+    font-weight: 400;
+    color: white;
+}
+
+@media only screen and (max-width: 1200px) {
+    .contact-block-info {
+        right: 2vw;
+    }
+
+    .contact-block-left:before {
+        background-image: unset;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .contact-block {
+        display: block;
+
+        padding-top: 100px;
+        padding-bottom: 0;
+
+        background: unset;
+        max-height: unset;
+
+        margin-bottom: 160px;
+    }
+
+    .contact-block-left {
+        width: 100%;
+    }
+
+    .contact-block-right {
+        width: calc(100% + 10vw);
+        margin: 0 -5vw;
+        transform: unset;
+    }
+
+    .contact-block-right {
+        padding-left: 0;
+    }
+
+    .contact-block-info {
+        right: calc(50% - 150px);
+        bottom: -125px;
+    }
+
+    .faq-block {
+        padding-top: 2rem;
+    }
+
+    .faq-block-text h2 {
+        max-width: 100%;
+    }
+
+    .faq-block-text p {
+        max-width: 100%;
+    }
+
+    .faq-block:before {
+        width: 300px;
+        height: 500px;
+        position: absolute;
+        top: -200px;
+        right: -150px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .contact-block-info {
+        width: calc(100% - 10vw);
+        left: 5vw;
+        bottom: -125px;
+    }
+
+    .contact-block-form .row {
+        display: block !important;
+    }
+}

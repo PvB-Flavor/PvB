@@ -2,13 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e6b0d37-5b9a-4d1a-ab68-f8fa81be595b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/js/adminnotice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/about-home.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/contact.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/footer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/how-home.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/intro-home.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/nav.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/research-home.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/researches.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/respondent.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/orange-bar.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/streep-cash.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/streep-mening.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/base/researches.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/base/respondent.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/home.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/home.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/home.scss" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/BaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BaseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Question.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Question.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/QuestionType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/QuestionType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base/contact.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base/contact.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -125,16 +145,21 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PvB - kopie" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PvB\templates\base" />
+      <recent name="D:\PvB\src\Entity" />
       <recent name="D:\PvB\templates" />
       <recent name="D:\PvB\templates\dashboard" />
-      <recent name="D:\PvB\templates\base" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\PvB\public\images" />
+      <recent name="D:\PvB\public\css" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -149,7 +174,13 @@
       <workItem from="1648545122822" duration="10061000" />
       <workItem from="1649758701402" duration="4367000" />
       <workItem from="1650353409827" duration="13952000" />
-      <workItem from="1650403941921" duration="4646000" />
+      <workItem from="1650403941921" duration="5404000" />
+      <workItem from="1650635651026" duration="1416000" />
+      <workItem from="1650957839644" duration="13371000" />
+      <workItem from="1652047383705" duration="9599000" />
+      <workItem from="1652129774800" duration="2158000" />
+      <workItem from="1652169887986" duration="36101000" />
+      <workItem from="1652426560808" duration="1508000" />
     </task>
     <servers />
   </component>

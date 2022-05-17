@@ -1,0 +1,208 @@
+.intro-block {
+    position: relative;
+    height: fit-content;
+    padding: 150px 5vw 10rem;
+    margin-top: 0;
+}
+@media (min-width: 40em) {
+    .intro-block {
+        background: rgba(236, 233, 233, 0.3450980392);
+        padding-top: 200px;
+    }
+}
+
+.intro-block-text:before {
+    content: "";
+    background-image: url(../images/puntjes-links-eerstevouw.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: -70%;
+    top: 10%;
+}
+
+.intro-block-girl:before {
+    content: "";
+    background-image: url(../images/puntjes-links-eerstevouw.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 60%;
+    height: 60%;
+    position: absolute;
+    top: 50%;
+}
+@media (min-width: 40em) {
+    .intro-block-girl:before {
+        left: 40%;
+        top: 30%;
+    }
+}
+
+.intro-block-text {
+    width: 100%;
+    max-width: 69rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 99;
+}
+.intro-block-text h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(3rem, 5vw, 9.5rem);
+    font-weight: 500;
+}
+@media (min-width: 40em) {
+    .intro-block-text h2 {
+        margin-bottom: 1.5rem;
+    }
+}
+.intro-block-text h2 span {
+    font-weight: 700;
+}
+.intro-block-text h2 .bgline-1 {
+    background-image: url(../images/streep-mening.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.intro-block-text h2 .bgline-2 {
+    background-image: url(../images/streep-cash.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 110%;
+}
+.intro-block-text h3 {
+    font-family: "Karla";
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    color: #6ec5ed;
+    margin-bottom: 3rem;
+    max-width: 700px;
+}
+
+.intro-block-points {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    max-width: 900px;
+}
+.intro-block-points p {
+    font-family: "Karla", sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    position: relative;
+    margin-left: 2.25rem;
+}
+@media (min-width: 40em) {
+    .intro-block-points p {
+        margin-bottom: 0 !important;
+        width: calc(50% - 3.5rem);
+    }
+}
+.intro-block-points p::before {
+    content: " ";
+    position: absolute;
+    left: -1.75rem;
+    top: 0.6rem;
+    background-image: url(../images/bulletpoint-black.svg);
+    background-size: 100% 100%;
+    height: 1rem;
+    width: 1rem;
+}
+.intro-block-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 4rem;
+    max-width: 700px;
+    width: 100%;
+}
+
+.intro-block-buttons button {
+    background: #ea5b3f;
+    font-size: 20px;
+    color: #fff;
+    border: none;
+    padding: 5px 15px;
+    outline: 0 !important;
+    cursor: pointer;
+
+    width: fit-content;
+    font-family: "Space Grotesk";
+}
+.intro-block-buttons a {
+    padding: 5px 15px;
+    color: #ea5b3f !important;
+    font-family: "Space Grotesk";
+    font-weight: 600;
+    font-size: 20px;
+    width: fit-content;
+    margin-left: 20px;
+}
+
+@media only screen and (max-width: 700px) {
+    .intro-block {
+        padding: 100px 5vw 10rem;
+    }
+
+    .intro-block-buttons a {
+        display: block;
+        padding: 0;
+        margin: 10px 0;
+    }
+
+    .intro-block-buttons button {
+
+    }
+
+    .intro-block-buttons {
+        display: block;
+        width: 100%;
+        margin-top: 1rem;
+    }
+}
+
+
+.intro-block-girl-img {
+    width: auto;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    bottom: -5rem;
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+    .intro-block-girl {
+        bottom: -11rem;
+    }
+}
+.intro-block-girl img {
+    margin-left: 40%;
+    max-height: 950px;
+}
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .intro-block-girl img {
+        height: 800px;
+    }
+}
+
+@media (max-width: 40em) {
+    .intro-block-text:before {
+        background-image: unset;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .intro-block-girl img {
+        height: 600px;
+    }
+}
+@media (min-width: 0px) and (max-width: 768px) {
+    .intro-block-girl img {
+        height: 400px;
+    }
+}
