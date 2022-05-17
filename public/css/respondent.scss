@@ -1,5 +1,4 @@
 @import "mixins.scss";
-
 .respondent {
   .split {
     display: flex;
@@ -108,6 +107,9 @@
     }
     &-img {
       background-color: $grey;
+      img {
+        margin-left: 2rem;
+      }
     }
     &-text {
       .bgline-blue {

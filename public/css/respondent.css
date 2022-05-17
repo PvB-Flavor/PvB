@@ -15,7 +15,7 @@
   color: #181818 !important;
   font-family: "Space Grotesk";
   font-weight: 700;
-  font-size: clamp(3em, 5vw, 4.3em);
+  font-size: clamp(3em, 5vw, 4.5em);
   margin-bottom: 2rem;
 }
 
@@ -23,7 +23,7 @@
   color: #fff !important;
   font-family: "Space Grotesk";
   font-weight: 700;
-  font-size: clamp(3em, 5vw, 4.3em);
+  font-size: clamp(3em, 5vw, 4.5em);
   margin-bottom: 2rem;
 }
 
@@ -183,6 +183,9 @@ img {
 }
 .respondent-company-block-img {
   background-color: rgba(236, 233, 233, 0.3450980392);
+}
+.respondent-company-block-img img {
+  margin-left: 2rem;
 }
 .respondent-company-block-text .bgline-blue {
   background-image: url(../images/bedrijven-mark.svg);
