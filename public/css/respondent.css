@@ -28,10 +28,10 @@
 }
 
 .black-karla {
-  color: #181818 !important;
+  color: #181818;
   font-family: "Karla";
   font-weight: 500;
-  font-size: clamp(1.2rem, 5vw, 1.5rem);
+  font-size: clamp(1.5rem, 5vw, 2rem);
 }
 .black-karla-light {
   font-weight: 400;
@@ -44,7 +44,7 @@
   color: #fff !important;
   font-family: "Karla";
   font-weight: 500;
-  font-size: clamp(1.3rem, 5vw, 1.5rem);
+  font-size: clamp(1.5rem, 5vw, 2rem);
 }
 .white-karla-bold {
   font-weight: 700;
@@ -154,6 +154,20 @@ img {
   .respondent-why-block {
     margin-bottom: 7rem;
   }
+}
+.respondent-why-block-text li {
+  position: relative;
+  margin-left: 20px;
+}
+.respondent-why-block-text li::before {
+  content: " ";
+  position: absolute;
+  left: -20px;
+  top: 9px;
+  background-image: url(../images/bulletpoint-orange.svg);
+  background-size: 100% 100%;
+  height: 1rem;
+  width: 1rem;
 }
 @media (min-width: 40em) {
   .respondent-cash-block {
