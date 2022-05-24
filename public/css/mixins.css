@@ -28,7 +28,7 @@
 }
 
 .black-karla {
-  color: #181818 !important;
+  color: #181818;
   font-family: "Karla";
   font-weight: 500;
   font-size: clamp(1.2rem, 5vw, 1.5rem);

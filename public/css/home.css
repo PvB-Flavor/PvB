@@ -1,3 +1,95 @@
+/*------------------------------------*\
+:    Mixins - Variables
+\*------------------------------------*/
+/*------------------------------------*\
+:    Mixins - Fonts
+\*------------------------------------*/
+.blue-grotesk {
+  color: #6ec5ed !important;
+  font-family: "Space Grotesk";
+  font-weight: 500;
+  font-size: clamp(1.7rem, 5vw, 2rem);
+}
+
+.black-grostesk {
+  color: #181818 !important;
+  font-family: "Space Grotesk";
+  font-weight: 700;
+  font-size: clamp(3em, 5vw, 4.5em);
+  margin-bottom: 2rem;
+}
+
+.white-grostesk {
+  color: #fff !important;
+  font-family: "Space Grotesk";
+  font-weight: 700;
+  font-size: clamp(3em, 5vw, 4.5em);
+  margin-bottom: 2rem;
+}
+
+.black-karla {
+  color: #181818;
+  font-family: "Karla";
+  font-weight: 500;
+  font-size: clamp(1.2rem, 5vw, 1.5rem);
+}
+.black-karla-light {
+  font-weight: 400;
+}
+.black-karla-bold {
+  font-weight: 700;
+}
+
+.white-karla {
+  color: #fff !important;
+  font-family: "Karla";
+  font-weight: 500;
+  font-size: clamp(1.3rem, 5vw, 1.5rem);
+}
+.white-karla-bold {
+  font-weight: 700;
+}
+
+.orange-grostesk {
+  color: #ea5b3f !important;
+  font-family: "Space Grotesk";
+  font-weight: 600;
+  font-size: clamp(2rem, 5vw, 2.2rem);
+}
+
+.orange-title {
+  color: #ea5b3f !important;
+  font-family: "Space Grotesk";
+  font-weight: 500;
+  font-size: clamp(1.8rem, 3vw, 2rem);
+}
+
+/*------------------------------------*\
+:    Mixins - Basic
+\*------------------------------------*/
+* {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Space Grotesk";
+}
+
+img {
+  width: 100%;
+}
+
+/*------------------------------------*\
+:    Mixins - Media Queries
+\*------------------------------------*/
 .intro-block {
   position: relative;
   height: 75rem;
@@ -57,7 +149,6 @@
 .intro-block-text h3 {
   font-family: "Karla";
   font-weight: 700;
-  font-size: 3.2rem;
   font-size: clamp(2rem, 5vw, 3.2rem);
   color: #6ec5ed;
   margin-bottom: 2rem;
@@ -76,7 +167,7 @@
 .intro-block-points p {
   font-family: "Karla";
   font-weight: 500;
-  font-size: 1.8rem;
+  font-size: clamp(1.6rem, 5vw, 1.8rem);
   position: relative;
   margin-left: 3.5rem;
 }
@@ -109,7 +200,7 @@
 .intro-block-buttons button {
   background-color: #ea5b3f;
   padding-inline: 1rem;
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 5vw, 2.5rem);
   color: #fff;
   border: none;
   max-width: 32.5rem;
@@ -120,7 +211,7 @@
   color: #ea5b3f !important;
   font-family: "Space Grotesk";
   font-weight: 600;
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 5vw, 2.5rem);
 }
 @media (min-width: 40em) {
   .intro-block-buttons a {
@@ -198,6 +289,7 @@
 }
 .how-block-text {
   padding: 0 5vw;
+  position: relative;
 }
 @media (min-width: 40em) {
   .how-block-text {
@@ -210,64 +302,25 @@
 .how-block-text #spacing {
   margin-bottom: 3rem;
 }
-.how-block .blue-grotesk {
-  color: #6ec5ed !important;
-  font-family: "Space Grotesk";
-  font-weight: 500;
-  font-size: 2rem;
+.how-block-text::after {
+  z-index: -1;
+  content: " ";
+  position: absolute;
+  right: 0;
+  bottom: -2rem;
+  background-image: url(../images/schuinepuntjes-hoewerkthet.svg);
+  background-size: 100% 100%;
+  height: 15rem;
+  width: 15rem;
 }
-
-.black-grostesk {
-  color: #181818 !important;
-  font-family: "Space Grotesk";
-  font-weight: 700;
-  font-size: clamp(4rem, 5vw, 5.5rem);
-  margin-bottom: 2rem;
-}
-
-.white-grostesk {
-  color: #fff !important;
-  font-family: "Space Grotesk";
-  font-weight: 700;
-  font-size: clamp(4rem, 5vw, 5.2rem);
-  margin-bottom: 2rem;
-}
-
-.black-karla {
-  color: #181818 !important;
-  font-family: "Karla";
-  font-weight: 500;
-  font-size: 1.5rem;
-}
-.black-karla-light {
-  font-weight: 400;
-}
-.black-karla-bold {
-  font-weight: 700;
-}
-
-.white-karla {
-  color: #fff !important;
-  font-family: "Karla";
-  font-weight: 500;
-  font-size: 1.5rem;
-}
-.white-karla-bold {
-  font-weight: 700;
-}
-
-.orange-grostesk {
-  color: #ea5b3f !important;
-  font-family: "Space Grotesk";
-  font-weight: 600;
-  font-size: 2.2rem;
-}
-
-.orange-title {
-  color: #ea5b3f !important;
-  font-family: "Space Grotesk";
-  font-weight: 500;
-  font-size: clamp(1.8rem, 3vw, 2rem);
+@media (min-width: 40em) {
+  .how-block-text::after {
+    height: 20rem;
+    width: 20rem;
+    bottom: unset;
+    top: 0;
+    right: 4%;
+  }
 }
 
 .research-block {
@@ -284,13 +337,13 @@
   color: #ffffff;
   font-family: "Space Grotesk";
   font-weight: 700;
-  font-size: 4.8rem;
+  font-size: clamp(4.3rem, 5vw, 4.8rem);
 }
 .research-block-container p {
   color: #ffffff;
   font-family: "Space Grotesk";
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: clamp(1.3rem, 5vw, 1.5rem);
 }
 .research-block .center {
   display: flex;
@@ -326,6 +379,7 @@
 .about-block-text {
   padding-left: 5vw;
   padding-right: 5vw;
+  position: relative;
 }
 .about-block-text .spacing {
   margin-top: 1.5rem;
@@ -342,12 +396,58 @@
   background-position: center;
   background-size: contain;
 }
+@media (min-width: 40em) {
+  .about-block-text::before {
+    content: " ";
+    position: absolute;
+    left: -5rem;
+    bottom: -10rem;
+    background-image: url(../images/puntjes-links-overbp.svg);
+    background-size: 100% 100%;
+    height: 30rem;
+    width: 25rem;
+  }
+}
 .about-block-img {
   min-height: 450px;
   background-image: url(../images/overbureauprofiel.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  position: relative;
+}
+.about-block-img::before {
+  content: " ";
+  position: absolute;
+  left: -5rem;
+  bottom: -10rem;
+  background-image: url(../images/puntjes-blauw-onderafbeelding.svg);
+  background-size: 100% 100%;
+  height: 20rem;
+  width: 30rem;
+}
+@media (min-width: 40em) {
+  .about-block-img::before {
+    height: 20rem;
+    width: 35rem;
+  }
+}
+.about-block-img::after {
+  content: " ";
+  position: absolute;
+  right: 0;
+  top: -8rem;
+  background-image: url(../images/puntjes-blauw-bovenafbeelding.svg);
+  background-size: 100% 100%;
+  height: 13rem;
+  width: 13rem;
+}
+@media (min-width: 40em) {
+  .about-block-img::after {
+    height: 18rem;
+    width: 15rem;
+    top: -10rem;
+  }
 }
 .about-block ul {
   margin-top: 2rem;
@@ -361,6 +461,7 @@
   font-family: "Karla";
   font-weight: 700;
   font-size: 1.5rem;
+  font-size: clamp(1.3rem, 5vw, 1.5rem);
 }
 .about-block ul li::before {
   content: " ";
@@ -388,11 +489,31 @@
 .company-block-text {
   background-color: #6ec5ed;
   padding: 5rem 2vw 5rem 5vw;
+  position: relative;
 }
 @media (min-width: 40em) {
   .company-block-text {
     max-width: 50vw;
     z-index: 99;
+  }
+}
+.company-block-text::after {
+  content: " ";
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-image: url(../images/puntjes-bedrijven.svg);
+  background-size: 100% 100%;
+  height: 20rem;
+  width: 20rem;
+}
+@media (min-width: 40em) {
+  .company-block-text::after {
+    top: unset;
+    bottom: -5rem;
+    right: -5rem;
+    height: 30rem;
+    width: 30rem;
   }
 }
 .company-block-text .spacing {
@@ -414,6 +535,7 @@
   font-family: "Karla";
   font-weight: 700;
   font-size: 1.5rem;
+  font-size: clamp(1.3rem, 5vw, 1.5rem);
   margin-bottom: 0.9rem;
 }
 .company-block-text ul li::before {
@@ -434,7 +556,7 @@
 }
 @media (min-width: 40em) {
   .company-block-img {
-    margin-left: -30%;
+    margin-left: -20%;
     margin-top: -8%;
     margin-bottom: 8%;
   }
@@ -449,6 +571,45 @@ footer .orange-title {
 footer .footer-container-top {
   padding: 5vh 5vw;
   background-color: #e1e0e0;
+  position: relative;
+  overflow: hidden;
+}
+footer .footer-container-top::before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-image: url(../images/target-footer.svg);
+  background-size: 100% 100%;
+  transform: translate(-50%, 50%);
+  height: 23rem;
+  width: 23rem;
+}
+@media (min-width: 40em) {
+  footer .footer-container-top::before {
+    transform: translate(-30%, 50%);
+    height: 45rem;
+    width: 45rem;
+  }
+}
+footer .footer-container-top::after {
+  content: " ";
+  position: absolute;
+  right: -5rem;
+  top: 0;
+  background-image: url(../images/puntjes-footer.svg);
+  background-size: 100% 100%;
+  height: 25rem;
+  width: 25rem;
+}
+@media (min-width: 40em) {
+  footer .footer-container-top::after {
+    top: unset;
+    bottom: 0;
+    right: -5rem;
+    height: 35rem;
+    width: 35rem;
+  }
 }
 @media (min-width: 40em) {
   footer .footer-container-top-wrapper {

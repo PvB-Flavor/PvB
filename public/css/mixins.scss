@@ -1,10 +1,8 @@
 /*------------------------------------*\
 :    Mixins - Variables
 \*------------------------------------*/
-$navbar-width: 35rem;
 
 // Variables color
-$darkblue: #001858;
 $lightblue: #6ec5ed;
 $orange: #ea5b3f;
 $black: #181818;
@@ -52,8 +50,9 @@ $white: #fff;
   font-size: clamp(3em, 5vw, 4.5em);
   margin-bottom: 2rem;
 }
+
 .black-karla {
-  color: #181818 !important;
+  color: #181818;
   font-family: "Karla";
   font-weight: 500;
   font-size: clamp(1.2rem, 5vw, 1.5rem);
