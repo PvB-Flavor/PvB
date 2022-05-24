@@ -1,0 +1,27 @@
+{% extends '@EasyAdmin/layout.html.twig' %}
+
+{% block head_stylesheets %}
+    {{ parent() }}
+
+    <link rel="stylesheet" href="{{ asset('css/EasyAdminOverride.css') }}">
+    <link rel="stylesheet" href="{{ asset('libraries/datatables/datatables.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('libraries/datatables/semantic.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('libraries/datatables/semanticui.min.css') }}">
+{% endblock %}
+
+{% block content_title %}{% endblock %}
+
+{% block content_help %}{% endblock %}
+
+{% block head_javascript %}
+    {{ parent() }}
+
+    <script src="{{ asset('libraries/jQuery.js') }}"></script>
+    <script src="{{ asset('libraries/datatables/datatables.min.js') }}"></script>
+{% endblock %}
+
+{% block main %}
+
+    <h2>Welkom {{ email }}</h2>
+
+{% endblock main %}

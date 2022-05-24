@@ -1,0 +1,39 @@
+{% extends '/admin/dashboard.html.twig' %}
+
+{% block main %}
+
+    <h2>Contact formulier van {{ contact.email }}</h2>
+
+    <style>
+        .copyEmail {
+            padding-left: 10px;
+            cursor: pointer;
+            color: #4183c4;
+        }
+    </style>
+
+    <div style="margin-bottom: 15px; padding: 20px; background: #f6f6f6; border-radius: 15px; font-size: 1.2rem;">
+        <p style="margin-bottom: 0;"><b>Voornaam:</b> <i>{{ contact.firstname }}</i></p>
+        <p style="margin-bottom: 0;"><b>Achternaam:</b> <i>{{ contact.lastname }}</i></p>
+        <p><b>Email:</b> <i id="contact-email">{{ contact.email }}</i><i class="copyEmail fa-solid fa-copy"></i></p>
+    </div>
+
+    <p style="margin-bottom: 15px; padding: 20px; background: #f6f6f6; border-radius: 15px;"><b>Bericht:</b> <br><br><i>{{ contact.message }}</i></p>
+
+    <button class="btn btn-danger" id="delete-contact">Verwijder</button>
+
+    <script>
+        document.getElementById('delete-contact').addEventListener('click', () => {
+            fetch('{{ url('app_admin_contacts_delete', { 'id': contact.id }) }}', {
+                method: 'POST'
+            }).then(() => {
+                window.location = '{{ path('app_admin_contacts') }}';
+            });
+        });
+
+        document.querySelector('.copyEmail').addEventListener('click', () => {
+            const email = document.getElementById('contact-email');
+            navigator.clipboard.writeText(email.innerHTML);
+        });
+    </script>
+{% endblock %}

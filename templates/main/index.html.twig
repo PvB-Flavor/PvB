@@ -1,0 +1,297 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Bureau Profiel - Home
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script>
+        const FORM_DATA = {
+            pages: [
+                {
+                    fields: [
+                        {
+                            label: 'Voornaam',
+                            type: 'text',
+                            placeholder: 'Voornaam...',
+                            classname: 'register-firstname',
+                            required: true,
+                            fullwidth: false
+                        },
+                        {
+                            label: 'Achternaam',
+                            type: 'text',
+                            placeholder: 'Achternaam...',
+                            classname: 'register-surname',
+                            required: true,
+                            fullwidth: false
+                        },
+                        {
+                            label: 'Jouw e-mailadres',
+                            type: 'email',
+                            placeholder: 'E-mailadres...',
+                            classname: 'register-email',
+                            required: true,
+                            fullwidth: true
+                        },
+                        {
+                            label: 'Geslacht',
+                            type: 'choice',
+                            classname: 'register-gender register-onechoice',
+                            choices: [
+                                {
+                                    id: 'gender-male',
+                                    value: 'male',
+                                    name: 'register-gender',
+                                    label: 'Man'
+                                },
+                                {
+                                    id: 'gender-female',
+                                    value: 'woman',
+                                    name: 'register-gender',
+                                    label: 'Vrouw'
+                                },
+                                {
+                                    id: 'gender-different',
+                                    value: 'different',
+                                    name: 'register-gender',
+                                    label: 'Anders'
+                                },
+                            ],
+                            required: true,
+                            fullwidth: true
+                        },
+                        {
+                            label: 'Geboortedatum',
+                            type: 'date',
+                            classname: 'register-birthdate',
+                            required: true,
+                            fullwidth: false
+                        },
+                        {
+                            label: 'Heb je al eerder meegewerkt aan marktonderzoeken bij Bureau Profiel?',
+                            type: 'choice',
+                            classname: 'register-participated register-onechoice',
+                            choices: [
+                                {
+                                    id: 'participated-yes',
+                                    value: 'no',
+                                    name: 'register-participated',
+                                    label: 'Ja'
+                                },
+                                {
+                                    id: 'participated-no',
+                                    value: 'yes',
+                                    name: 'register-participated',
+                                    label: 'Nee'
+                                },
+                            ],
+                            required: true,
+                            fullwidth: true
+                        },
+                        {
+                            label: 'Zo ja, hoevaak',
+                            type: 'number',
+                            classname: 'register-participationAmount',
+                            required: true,
+                            fullwidth: false
+                        },
+                        {
+                            label: 'Postcode',
+                            type: 'text',
+                            classname: 'register-postalcode',
+                            placeholder: 'Postcode...',
+                            required: true,
+                            fullwidth: false
+                        },
+                        {
+                            label: 'Woonplaats',
+                            type: 'text',
+                            classname: 'register-city',
+                            placeholder: 'Woonplaats...',
+                            required: true,
+                            fullwidth: false
+                        },
+                    ],
+                },
+                {% for page in pages %}
+                    {
+                        fields: [
+                        {% for question in page %}
+                            {
+                                label: '{{ question.question }}',
+                                type: '{{ question.inputType }}',
+                                classname: 'question-{{ question.id }}',
+                                placeholder: '{{ question.question }}...',
+                                required: {% if question.required %}true{% else %}false{% endif %},
+                                fullwidth: {% if question.fullWidth %}true{% else %}false{% endif %}
+                            },
+                        {% endfor %}
+                        ],
+                    },
+                {% endfor %}
+            ]
+        }
+    </script>
+{% endblock %}
+
+{% block main %}
+    {{ parent() }}
+
+    <section class="intro-block">
+        <div class="intro-block-text">
+            <h2>Zet je <span class="bgline-1">mening</span><br> om in <span class="bgline-2">cash</span></h2>
+            <h3>Doe mee aan marktonderzoeken en verdien door je mening te geven</h3>
+            <div class="intro-block-points">
+                <p>Vergoeding tot wel €70</p>
+                <p>Deel je mening en aanbeveling</p>
+                <p>Werk samen met grote bedrijven</p>
+                <p>Doe kennis op over van alles</p>
+            </div>
+            <div class="intro-block-buttons">
+                <button>Respondent worden</button>
+                <a href="">Voor opdrachtgevers ></a>
+            </div>
+        </div>
+        <div class="intro-block-girl">
+            <div class="intro-block-girl-img">
+                <img src="{{ asset('images/afbeeling-invorm-eerstevouw.png') }}" >
+            </div>
+        </div>
+    </section>
+
+    <section class="home-how-block">
+        <div class="home-how-block-text">
+            <h3 class="blue-grotesk">RESPONDENT WORDEN</h3>
+            <h2 class="black-grostesk">Hoe werkt het</h2>
+            <p class="black-karla black-karla-bold">Voordat er een nieuw product uitkomt, of voordat er een reclame- of voorlichtingscampagne uitgebracht wordt,
+                willen de makers hiervan graag weten wat u als consument hiervan vindt. Dit kan bijvoorbeeld een reclame- of
+                marktonderzoekbureau zijn, of een fabrikant van een bepaald product of soms de overheid. Zij willen uw mening horen
+                om zo de kans op succes te vergroten.
+            </p>
+            <p class="black-karla" id="spacing">
+                Onze opdrachtgever houdt onder de doelgroep een kwalitatief marktonderzoek. Dit gebeurt over het algemeen bij een
+                marktonderzoekbureau in Amsterdam. Zo’n onderzoek gebeurt in de vorm van een interview of een groepsdiscussie en de
+                duur kan variëren van 15 minuten tot maximaal 3 uur.
+            </p>
+            <a class="orange-grostesk" href="{{ path('app_respondent') }}">Meer over respondenten ></a>
+        </div>
+        <div class="home-how-block-img">
+{#            <img src="{{ asset('images/afbeelding-hoewerkthet.png') }}" >#}
+        </div>
+    </section>
+
+    <section class="research-block">
+        <div class="research-block-floating">
+            <img class="research-circle" src="{{ asset('images/target-marktonderzoeken.svg') }}">
+            <img class="research-dots" src="{{ asset('images/puntjes-rechts-marktonderzoeken.svg') }}">
+        </div>
+        <div class="research-block-container">
+            <div class="research-block-text">
+                <h2>Marktonderzoek</h2>
+                <p>Wij hebben samenwerkingen met verschillende soorten bedrijven die Onderzoeken doen met respondenten. Bekijk hier
+                    marktonderzoeken waarbij onze respondenten zijn gebruikt.</p>
+            </div>
+            <div class="research-block-researches">
+                {% for research in researches %}
+                    <div class="research-block-research">
+                        <div class="research-title">
+                            {% if research.ongoing == true %} <h3 style="color: #EA5B3F;">WIJ ZIJN OPZOEK NAAR</h3> {% else %} <h3 style="color: #6EC5ED;">AFGEROND ONDERZOEK</h3> {% endif %}
+                            <span>{{ research.title }}</span>
+                        </div>
+                        <div class="research-image">
+                            {% set imageURL = 'uploads/' ~ research.image %}
+                            {% set companyImageURL = 'uploads/' ~ research.companyImage %}
+
+                            <img class="research-main-image" src="{{ asset(imageURL) }}" alt="research image">
+                        </div>
+                        <img class="research-company-image" src="{{ asset(companyImageURL) }}" alt="research image">
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <script>
+            $('.research-block-researches').slick({
+                infinite: false,
+                slidesToShow: 3,
+                arrows: true,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                touchThreshold: 10,
+                nextArrow: '<button type="button" class="slick-next research-slide research-next"><svg viewBox="0 0 256 512"><path d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"/></svg></button>',
+                prevArrow: '<button type="button" class="slick-previous research-slide research-prev"><svg viewBox="0 0 256 512"><path d="M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z"/></svg></button>',
+                responsive: [
+                    {
+                        breakpoint: 700,
+                        settings: {
+                            slidesToShow: 1.2,
+                            arrows: false,
+                        }
+                    },
+                    {
+                        breakpoint: 1000,
+                        settings: {
+                            slidesToShow: 2,
+                            arrows: false,
+                        }
+                    },
+                    {
+                        breakpoint: 500,
+                        settings: {
+                            slidesToShow: 1.1,
+                            arrows: false,
+                        }
+                    }
+                ]
+            });
+        </script>
+    </section>
+
+    <section class="about-block">
+        <div class="about-block-text">
+            <h3 class="orange-title">WIE ZIJN WIJ</h3>
+            <h2 class="black-grostesk">Over <span class="bgline-3">Bureau Profiel</span></h2>
+            <p class="black-karla black-karla-bold">Wij houden ons elke dag bezig met werving en selectie van respondenten, zowel consumenten als Business-to-Business.
+                Zo hebben we een database met respondenten die wij kunnen inzetten bij een marktonderzoek.</p>
+            <p class="black-karla spacing">
+                Wij zijn altijd op zoek naar mensen, die hun mening willen geven over allerlei nieuwe producten, diensten of reclamecampagnes.
+            </p>
+            <p class="black-karla">
+                Voor marktonderzoek is het belangrijk dat allemaal verschillende mensen meedoen:
+            </p>
+            <ul>
+                <li>kinderen/jongeren/volwassenen/senioren</li>
+                <li>mannen/vrouwen</li>
+                <li>verschillende culturele achtergronden</li>
+                <li>hoog/laag opgeleiden</li>
+                <li>werkenden/niet werkenden</li>
+            </ul>
+        </div>
+        <div class="about-block-img">
+            <!-- <img src="{{ asset('images/overbureauprofiel.jpg') }}"> -->
+        </div>
+    </section>
+
+    <div class="register">
+        <div class="register-form">
+            <div class="register-title">
+                <h3>Vul hier je gegevens in</h3>
+                <p>En start met verdienen</p>
+            </div>
+            <div class="register-progress">
+
+            </div>
+
+            <div class="register-pages">
+
+            </div>
+
+            <button class="register-submit">Volgende stap</button>
+        </div>
+
+        <script src="{{ asset('js/register.js') }}"></script>
+    </div>
+{% endblock %}

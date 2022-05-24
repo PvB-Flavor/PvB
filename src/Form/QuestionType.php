@@ -16,8 +16,27 @@ class QuestionType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('question', TextType::class)
+            ->add('question', TextType::class, [
+                'label' => 'Vraag',
+                'attr' => ['placeholder' => 'Vraag...']
+            ])
+            ->add('required', ChoiceType::class, [
+                'label' => 'Vereist',
+                'choices' => [
+                    'Ja' => true,
+                    'Nee' => false,
+                ],
+            ])
+            ->add('fullWidth', ChoiceType::class, [
+                'label' => 'Volledige breedte',
+                'choices' => [
+                    'Ja' => true,
+                    'Nee' => false,
+                ],
+                'help' => 'Indien deze optie op ja staat, neemt dit veld in het inschrijf-formulier de volledige breedte.',
+            ])
             ->add('inputType', ChoiceType::class, [
+                'label' => 'Type vraag',
                 'choices' => [
                     'Tekst veld' => 'text',
                     'Selectie' => 'select',
@@ -26,7 +45,11 @@ class QuestionType extends AbstractType
                     'Nummer' => 'number'
                 ],
             ])
-            ->add('options', HiddenType::class)
+            ->add('options', TextType::class, [
+                'label' => 'Opties (Alleen invullen indien selectie als type is geselecteerd)',
+                'required' => false,
+                'help' => 'Scheidt de opties met een comma. Voorbeeld: BureauProfiel,Selectie,Nieuwe vraag',
+            ])
             ->add('Opslaan', SubmitType::class)
         ;
     }

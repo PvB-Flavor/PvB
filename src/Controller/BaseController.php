@@ -42,7 +42,7 @@ class BaseController extends AbstractController
 
         $researches = array_slice($researches, 0, 10);
 
-        return $this->render('base/index.html.twig', get_defined_vars());
+        return $this->render('main/index.html.twig', get_defined_vars());
     }
 
     /**
@@ -62,7 +62,7 @@ class BaseController extends AbstractController
 
         foreach ($researches as $research) ($research->getOngoing() === true) ? $researchesOngoing[] = $research : $researchesDone[] = $research;
 
-        return $this->render('base/researches.html.twig', get_defined_vars());
+        return $this->render('main/researches.html.twig', get_defined_vars());
     }
 
     /**
@@ -76,7 +76,7 @@ class BaseController extends AbstractController
         $email = null;
         if ($this->getUser()) $email = $this->getUser()->getUserIdentifier();
 
-        return $this->render('base/respondent.html.twig', get_defined_vars());
+        return $this->render('main/respondent.html.twig', get_defined_vars());
     }
 
     /**
@@ -109,6 +109,6 @@ class BaseController extends AbstractController
             return $this->redirectToRoute('app_contact', ['success' => true]);
         }
 
-        return $this->renderForm('base/contact.html.twig', get_defined_vars());
+        return $this->renderForm('main/contact.html.twig', get_defined_vars());
     }
 }

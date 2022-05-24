@@ -1,0 +1,72 @@
+{% extends '/admin/dashboard.html.twig' %}
+
+{% block main %}
+
+    <h2>Onderzoeken</h2>
+
+    <table id="researches" class="ui celled table" style="width:100%;">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Titel</th>
+            <th>Lopend</th>
+            <th>Form Link</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for research in researches %}
+            <tr>
+                <td>{{ research.id }}</td>
+                <td>{{ research.title }}</td>
+                <td>
+                    {% if research.ongoing == true %}
+                        Lopend
+                    {% else %}
+                        Afgerond
+                    {% endif %}
+                </td>
+                <td><a href="{{ research.formLink }}">{{ research.formLink }}</a></td>
+                <td><a href="{{ path('app_admin_researches_edit', { 'id': research.id }) }}"><i class="fa-solid fa-up-right-from-square"></i></a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        <tfoot>
+        <tr>
+            <th>ID</th>
+            <th>Titel</th>
+            <th>Lopend</th>
+            <th>Form Link</th>
+            <th></th>
+        </tr>
+        </tfoot>
+    </table>
+
+    <a href="{{ path('app_admin_researches_new') }}" class="d-inline-block btn btn-primary">Nieuw onderzoek</a>
+
+    <script>
+        $(document).ready(function () {
+            $('#researches').DataTable({
+                aoColumnDefs: [
+                    {
+                        bSortable: false,
+                        aTargets: [ -1 ]
+                    }
+                ],
+                language: {
+                    "lengthMenu": "_MENU_  Rijen per pagina",
+                    "zeroRecords": "Geen resultaten gevonden",
+                    "info": "Pagina _PAGE_ van _PAGES_",
+                    "infoEmpty": "Geen data beschikbaar",
+                    "infoFiltered": "",
+                    "search": 'Zoeken',
+                    "paginate": {
+                        previous: 'Vorige',
+                        next:     'Volgende',
+                    },
+                }
+            });
+        });
+    </script>
+
+{% endblock %}

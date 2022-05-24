@@ -49,13 +49,13 @@ class Question
 
     /**
      * Whether the field should take the full width of the form.
-     * @ORM\Column(type="boolean", nullable=false, options={"default" : false})
+     * @ORM\Column(type="boolean", nullable=true, options={"default" : false})
      */
     private $fullWidth;
 
     /**
      * Whether the field should take the full width of the form.
-     * @ORM\Column(type="boolean", nullable=false, options={"default" : false})
+     * @ORM\Column(type="boolean", nullable=true, options={"default" : false})
      */
     private $required;
 

@@ -1,0 +1,32 @@
+{% extends '/admin/dashboard.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block main %}
+
+    {% if research.id is not null %}
+        <h2>Onderzoek {{ research.title }}</h2>
+    {% else %}
+        <h2>Maak een nieuw onderzoek</h2>
+    {% endif %}
+
+    {{ form(form) }}
+
+    {% if research.id is not null %}
+        <button class="btn btn-danger" id="delete-research">
+            Verwijder
+        </button>
+
+        <script>
+            document.getElementById('delete-research').addEventListener('click', () => {
+                fetch('{{ url('app_admin_research_delete', { 'id': research.id }) }}', {
+                    method: 'POST'
+                }).then(() => {
+                    window.location = '{{ path('app_admin_researches') }}';
+                });
+            });
+        </script>
+    {% endif %}
+
+    <div style="margin-bottom: 150px;"></div>
+
+{% endblock %}

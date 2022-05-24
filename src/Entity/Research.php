@@ -27,9 +27,16 @@ class Research
     private $title;
 
     /**
+     * The description of the research
+     * @ORM\Column(type="string")
+     * @Assert\NotBlank
+     * @Assert\Type("string")
+     */
+    private $description;
+
+    /**
      * If the research is still ongoing
      * @ORM\Column(type="boolean")
-     * @Assert\NotBlank
      * @Assert\Type("bool")
      */
     private $ongoing;
@@ -37,26 +44,24 @@ class Research
     /**
      * The link to the form
      * @ORM\Column(type="string")
-     * @Assert\NotBlank
+     * @Assert\Url
      * @Assert\Type("string")
      */
     private $formLink;
 
     /**
      * The path to research image
-     * @ORM\Column(type="string")
-     * @Assert\NotBlank
+     * @ORM\Column(type="string", nullable=true, options={"default": "placeholder.jpg"})
      * @Assert\Type("string")
      */
-    private $pathToImage;
+    private $image;
 
     /**
      * The path to the company image
-     * @ORM\Column(type="string")
-     * @Assert\NotBlank
+     * @ORM\Column(type="string", nullable=true, options={"default": "placeholder.jpg"})
      * @Assert\Type("string")
      */
-    private $pathToCompanyImage;
+    private $companyImage;
 
     public function getId(): ?int
     {
@@ -77,6 +82,22 @@ class Research
     public function setTitle($title): void
     {
         $this->title = $title;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param mixed $description
+     */
+    public function setDescription($description): void
+    {
+        $this->description = $description;
     }
 
     /**
@@ -114,32 +135,32 @@ class Research
     /**
      * @return mixed
      */
-    public function getPathToImage()
+    public function getImage()
     {
-        return $this->pathToImage;
+        return $this->image;
     }
 
     /**
-     * @param mixed $pathToImage
+     * @param mixed $image
      */
-    public function setPathToImage($pathToImage): void
+    public function setImage($image): void
     {
-        $this->pathToImage = $pathToImage;
+        $this->image = $image;
     }
 
     /**
      * @return mixed
      */
-    public function getPathToCompanyImage()
+    public function getCompanyImage()
     {
-        return $this->pathToCompanyImage;
+        return $this->companyImage;
     }
 
     /**
-     * @param mixed $pathToCompanyImage
+     * @param mixed $companyImage
      */
-    public function setPathToCompanyImage($pathToCompanyImage): void
+    public function setCompanyImage($companyImage): void
     {
-        $this->pathToCompanyImage = $pathToCompanyImage;
+        $this->companyImage = $companyImage;
     }
 }

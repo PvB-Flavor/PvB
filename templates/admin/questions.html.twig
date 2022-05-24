@@ -1,0 +1,72 @@
+{% extends '/admin/dashboard.html.twig' %}
+
+{% block main %}
+
+    <h2>Vragen inschrijf-formulier</h2>
+
+    <table id="questions" class="ui celled table" style="width:100%;">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Vraag</th>
+            <th>Type vraag</th>
+            <th>Vereist</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for question in questions %}
+            <tr>
+                <td>{{ question.id }}</td>
+                <td>{{ question.question }}</td>
+                <td>{{ question.inputType }}</td>
+                <td>
+                    {% if question.required == true %}
+                        Ja
+                    {% else %}
+                        Nee
+                    {% endif %}
+                </td>
+                <td><a href="{{ path('app_admin_question_edit', { 'id': question.id }) }}"><i class="fa-solid fa-up-right-from-square"></i></a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        <tfoot>
+        <tr>
+            <th>ID</th>
+            <th>Vraag</th>
+            <th>Type vraag</th>
+            <th>Vereist</th>
+            <th></th>
+        </tr>
+        </tfoot>
+    </table>
+
+    <a href="{{ path('app_admin_question_new') }}" class="d-inline-block btn btn-primary">Nieuwe vraag</a>
+
+    <script>
+        $(document).ready(function () {
+            $('#questions').DataTable({
+                aoColumnDefs: [
+                    {
+                        bSortable: false,
+                        aTargets: [ -1 ]
+                    }
+                ],
+                language: {
+                    "lengthMenu": "_MENU_  Rijen per pagina",
+                    "zeroRecords": "Geen resultaten gevonden",
+                    "info": "Pagina _PAGE_ van _PAGES_",
+                    "infoEmpty": "Geen data beschikbaar",
+                    "infoFiltered": "",
+                    "search": 'Zoeken',
+                    "paginate": {
+                        previous: 'Vorige',
+                        next:     'Volgende',
+                    },
+                }
+            });
+        });
+    </script>
+
+{% endblock %}
