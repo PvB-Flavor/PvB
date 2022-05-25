@@ -36,6 +36,20 @@
     &-text {
       //   width: min(100%, 67rem);
       //   padding-inline: clamp(3rem, 8vw, 10rem);
+      position: relative;
+      &::before {
+        // z-index: -1;
+        content: " ";
+        position: absolute;
+        left: -50px;
+        top: 30%;
+        background-image: url(../images/puntjes-reviews.svg);
+        background-size: 100% 100%;
+        @media (min-width: 40em) {
+          height: 300px;
+          width: 300px;
+        }
+      }
       .bgline-pink {
         background-image: url(../images/hoe-werkt-dat-mark.svg);
         background-repeat: no-repeat;
@@ -53,8 +67,29 @@
   &-why-block {
     // flex-direction: column-reverse !important;
     background-color: $lightblue;
+    overflow-x: clip;
     @media (min-width: 40em) {
       margin-bottom: 7rem;
+    }
+    &-img {
+      position: relative;
+      &::after {
+        // z-index: -1;
+        content: " ";
+        position: absolute;
+        right: 0;
+        bottom: -50px;
+        background-image: url(../images/puntjes-orange.svg);
+        background-size: 100% 100%;
+        height: 110px;
+        width: 110px;
+        @media (min-width: 40em) {
+          height: 180px;
+          width: 190px;
+          top: -90px;
+          right: 30px;
+        }
+      }
     }
     &-text {
       //   margin-top: 5rem;
@@ -62,6 +97,24 @@
       //   @media (min-width: 40em) {
       //     margin: 0;
       //   }
+      position: relative;
+      &::after {
+        // z-index: -1;
+        content: " ";
+        position: absolute;
+        top: -20px;
+        right: -10px;
+        background-image: url(../images/puntjes-reviews.svg);
+        background-size: 100% 100%;
+        height: 200px;
+        width: 200px;
+        @media (min-width: 40em) {
+          height: 300px;
+          width: 300px;
+          top: unset;
+          bottom: -50px;
+        }
+      }
       li {
         position: relative;
         margin-left: 20px;
@@ -97,6 +150,7 @@
     }
 
     &-img {
+      position: relative;
       .mobile {
         display: block;
         @media (min-width: 40em) {
@@ -107,6 +161,19 @@
         display: none;
         @media (min-width: 40em) {
           display: flex;
+        }
+      }
+      &::after {
+        // z-index: -1;
+        content: " ";
+        position: absolute;
+        right: 0;
+        bottom: -90px;
+        background-image: url(../images/puntjes-orange.svg);
+        background-size: 100% 100%;
+        @media (min-width: 40em) {
+          height: 180px;
+          width: 190px;
         }
       }
     }
@@ -126,11 +193,31 @@
       }
     }
     &-text {
+      position: relative;
       .bgline-blue {
         background-image: url(../images/bedrijven-mark.svg);
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
+      }
+      &::after {
+        z-index: -1;
+        content: " ";
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-image: url(../images/puntjes-reviews.svg);
+        background-size: 100% 100%;
+        height: 150px;
+        width: 150px;
+        @media (min-width: 40em) {
+          height: 300px;
+          width: 300px;
+          top: unset;
+          right: unset;
+          bottom: -120px;
+          left: -90px;
+        }
       }
     }
   }
@@ -141,6 +228,22 @@
   &-trust-block {
     @media (min-width: 40em) {
       margin-bottom: 7rem;
+    }
+    &-text {
+      position: relative;
+      &::after {
+        z-index: -1;
+        content: " ";
+        position: absolute;
+        bottom: -50px;
+        right: 0;
+        background-image: url(../images/schuinepuntjes-hoewerkthet.svg);
+        background-size: 100% 100%;
+        @media (min-width: 40em) {
+          height: 190px;
+          width: 190px;
+        }
+      }
     }
   }
 

@@ -141,6 +141,23 @@ img {
     margin-bottom: 7rem;
   }
 }
+.respondent-how-block-text {
+  position: relative;
+}
+.respondent-how-block-text::before {
+  content: " ";
+  position: absolute;
+  left: -50px;
+  top: 30%;
+  background-image: url(../images/puntjes-reviews.svg);
+  background-size: 100% 100%;
+}
+@media (min-width: 40em) {
+  .respondent-how-block-text::before {
+    height: 300px;
+    width: 300px;
+  }
+}
 .respondent-how-block-text .bgline-pink {
   background-image: url(../images/hoe-werkt-dat-mark.svg);
   background-repeat: no-repeat;
@@ -149,10 +166,53 @@ img {
 }
 .respondent-why-block {
   background-color: #6ec5ed;
+  overflow-x: clip;
 }
 @media (min-width: 40em) {
   .respondent-why-block {
     margin-bottom: 7rem;
+  }
+}
+.respondent-why-block-img {
+  position: relative;
+}
+.respondent-why-block-img::after {
+  content: " ";
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+  background-image: url(../images/puntjes-orange.svg);
+  background-size: 100% 100%;
+  height: 110px;
+  width: 110px;
+}
+@media (min-width: 40em) {
+  .respondent-why-block-img::after {
+    height: 180px;
+    width: 190px;
+    top: -90px;
+    right: 30px;
+  }
+}
+.respondent-why-block-text {
+  position: relative;
+}
+.respondent-why-block-text::after {
+  content: " ";
+  position: absolute;
+  top: -20px;
+  right: -10px;
+  background-image: url(../images/puntjes-reviews.svg);
+  background-size: 100% 100%;
+  height: 200px;
+  width: 200px;
+}
+@media (min-width: 40em) {
+  .respondent-why-block-text::after {
+    height: 300px;
+    width: 300px;
+    top: unset;
+    bottom: -50px;
   }
 }
 .respondent-why-block-text li {
@@ -174,6 +234,9 @@ img {
     margin-bottom: 7rem;
   }
 }
+.respondent-cash-block-img {
+  position: relative;
+}
 .respondent-cash-block-img .mobile {
   display: block;
 }
@@ -190,6 +253,20 @@ img {
     display: flex;
   }
 }
+.respondent-cash-block-img::after {
+  content: " ";
+  position: absolute;
+  right: 0;
+  bottom: -90px;
+  background-image: url(../images/puntjes-orange.svg);
+  background-size: 100% 100%;
+}
+@media (min-width: 40em) {
+  .respondent-cash-block-img::after {
+    height: 180px;
+    width: 190px;
+  }
+}
 @media (min-width: 40em) {
   .respondent-company-block {
     margin-bottom: 7rem;
@@ -201,15 +278,57 @@ img {
 .respondent-company-block-img img {
   margin-left: 2rem;
 }
+.respondent-company-block-text {
+  position: relative;
+}
 .respondent-company-block-text .bgline-blue {
   background-image: url(../images/bedrijven-mark.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
 }
+.respondent-company-block-text::after {
+  z-index: -1;
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: url(../images/puntjes-reviews.svg);
+  background-size: 100% 100%;
+  height: 150px;
+  width: 150px;
+}
+@media (min-width: 40em) {
+  .respondent-company-block-text::after {
+    height: 300px;
+    width: 300px;
+    top: unset;
+    right: unset;
+    bottom: -120px;
+    left: -90px;
+  }
+}
 @media (min-width: 40em) {
   .respondent-trust-block {
     margin-bottom: 7rem;
+  }
+}
+.respondent-trust-block-text {
+  position: relative;
+}
+.respondent-trust-block-text::after {
+  z-index: -1;
+  content: " ";
+  position: absolute;
+  bottom: -50px;
+  right: 0;
+  background-image: url(../images/schuinepuntjes-hoewerkthet.svg);
+  background-size: 100% 100%;
+}
+@media (min-width: 40em) {
+  .respondent-trust-block-text::after {
+    height: 190px;
+    width: 190px;
   }
 }
 .respondent-cta-block {
