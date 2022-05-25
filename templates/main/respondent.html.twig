@@ -11,6 +11,8 @@
 {% endblock %}
 
 {% block main %}
+    {{ parent() }}
+
     <div class="respondent">
         <section class="respondent-how-block split">
             <div class="respondent-how-block-text">
@@ -79,7 +81,7 @@
 
         <section class="respondent-company-block split split-reverse">
             <div class="respondent-company-block-img">
-                <img src="{{ asset('images/bedrijflogoi.png') }}" >
+                <img src="{{ asset('images/bedrijfslogos-bureauprofiel.png') }}" >
             </div>
             <div class="respondent-company-block-text">
                 <div class="content-padding">
@@ -120,8 +122,8 @@
         <section class="respondent-cta-block">
             <div class="content-padding">
                 <div class="respondent-cta-block-text">
-                    <h2 class="white-grostesk">Wil jij ook respondent worden bij Bureau Profiel?</h2>
-                    <button>Inschrijven</button>
+                    <h2 class="white-grostesk" style="font-size: 2rem;">Wil jij ook respondent worden bij Bureau Profiel?</h2>
+                    <button class="register-button">Inschrijven</button>
                 </div>
             </div>
         </section>

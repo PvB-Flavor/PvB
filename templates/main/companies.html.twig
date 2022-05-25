@@ -1,0 +1,132 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Bedrijven - Bureau Profiel
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    <link href="{{ asset('css/respondent.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+    {{ parent() }}
+
+    <div class="respondent">
+        <section class="respondent-how-block split">
+            <div class="respondent-how-block-text">
+                <div class="content-padding">
+                    <h3 class="blue-grotesk">SINDS 1998 BETROUWBARE RESPONDENTEN</h3>
+                    <h2 class="black-grostesk">Hoe, wie en waar <span class="bgline-pink">werven</span> wij</h2>
+                    <p class="black-karla black-karla-bold">
+                        Ons promotieteam rekruteerd continu verse respondenten middels veldwerk. De respondenten zijn
+                        zodoende persoonlijk goed geïnformeerd en wij kunnen hen kwalificeren als zeer betrouwbaar.
+                    </p>
+                    <p class="black-karla" id="spacing">
+                        Wij leveren respondenten uit Amsterdam en directe omgeving voor allerlei kwalitatieve onderzoeken.
+                        Het aanbod is zeer breed.
+                    </p>
+                    <p class="black-karla" id="spacing">
+                        Wij hebben alle doelgroepen in een eigen database o.a. volwassenen,
+                        jongeren, kinderen, westerse Nederlanders, niet-westerse Nederlanders, hoog en lager opgeleiden,
+                        zelfstandig ondernemers enz.
+                    </p>
+                </div>
+            </div>
+            <div class="respondent-how-block-img">
+                <img src="{{ asset('images/werven-bureauprofiel-opdrachtgever.jpg') }}" >
+            </div>
+        </section>
+
+        <section class="respondent-why-block split split-reverse">
+            <div class="respondent-why-block-img">
+                <img src="{{ asset('images/onderzoeken-bureauprofiel-opdrachtgever.jpg') }}" >
+            </div>
+            <div class="respondent-why-block-text">
+                <div class="content-padding">
+                    <h2 class="white-grostesk">Mogelijkheid tot soorten onderzoeken</h2>
+                    <p class="white-karla">Mogelijkheid tot soorten onderzoeken</p>
+                    <ul>
+                        <li>Single interview</li>
+                        <li>Groepsdiscussies</li>
+                        <li>In home visits</li>
+                        <li>Go shoppings</li>
+                        <li>Multiculturele groepen</li>
+                    </ul>
+                    <p class="white-karla">wij kunnen tevens selecties uitvoeren middels aangeleverde lijsten</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="respondent-cash-block split">
+            <div class="respondent-cash-block-text">
+                <div class="content-padding">
+                    <h3 class="orange-grostesk">AANGESLOTEN BIJ</h3>
+                    <h2 class="black-grostesk">MOA</h2>
+                    <p class="black-karla black-karla-bold">Wij zijn tevens aangesloten bij de MOA (De MarktOnderzoekAssociatie).</p>
+                    <a class="orange-grostesk" >Meer over het MOA ></a>
+                    <p class="black-karla">Op al onze selecties zijn de algemene voorwaarden van de MOA van toepassing.</p>
+                    <!-- <p class="black-karla black-karla-bold">Gedragsregels</p> -->
+                    <p class="black-karla"><b>Gedragsregels</b> <br/>Uiteraard zijn wij gehouden aan de Wet op de Persoonsregistratie alsmede aan de verschillende gedragsregels en codes die gelden binnen de marktonderzoekbranche. Ons nummer bij de Registratiekamer is P-20020379.</p>
+
+                </div>
+            </div>
+            <div class="respondent-cash-block-img">
+                <img class="mobile" src="{{ asset('images/MOA-mobile-bureauprofiel-opdrachtgever.png') }}" >
+                <img class="desktop" src="{{ asset('images/MOA-bureauprofiel-opdrachtgever.png') }}" >
+            </div>
+        </section>
+
+        <section class="respondent-company-block split split-reverse">
+            <div class="respondent-company-block-img">
+                <img src="{{ asset('images/bedrijfslogos-bureauprofiel.png') }}" >
+            </div>
+            <div class="respondent-company-block-text">
+                <div class="content-padding">
+                    <h2 class="black-grostesk">Deze <span class="bgline-blue">bedrijven</span> gingen voor u</h2>
+                    <p class="black-karla black-karla-bold">
+                        Deze bedrijven, en nog veel meer, hebben via Bureau Profiel marktonderzoeken uitgevoerd.
+                        Wilt u ook een marktonderzoek starten? Neem dan contact met ons op!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="respondent-trust-block split">
+            <div class="respondent-trust-block-text">
+                <div class="content-padding">
+                    <h3 class="blue-grotesk">HOOG IN HET VAANDEL</h3>
+                    <h2 class="black-grostesk">Onze kwaliteiten</h2>
+                    <p class="black-karla" id="spacing">
+                        Kwaliteit hebben wij hoog in het vaandel staan en houden exact bij wanneer en voor welk onderwerp
+                        onze respondenten deelnemen aan onderzoeken. Op deze manier kunnen wij u garanderen dat zij niet
+                        vaker dan 1x per half jaar meedoen aan een onderzoek zodat u nooit de zgn. professionals via ons
+                        krijgt. Verder wordt ons bestand voortdurend uitgebreid c.q. ververst. Dit gebeurt op diverse
+                        manieren, zowel actief (in winkelcentra en uitgaansgelegenheden) als passief (de ene respondent
+                        brengt de andere in en via onze website).
+                    </p>
+                    <p class="black-karla" id="spacing">
+                        Bij aannemen van een opdracht kunt u er 100% vanuit gaan
+                        dat wij conform uw selectie eis, respondenten zullen selecteren. Tussendoor natuurlijk altijd overleg
+                        m.b.t. de stand van zaken. Alle respondenten krijgen een bevestiging (met routebeschrijving) en wij
+                        verzoeken hen om zich 10 minuten eerder aan te melden. Tijdens de onderzoeken zijn wij altijd
+                        telefonisch bereikbaar zowel voor u als voor de respondenten.
+                    </p>
+                </div>
+            </div>
+            <div class="respondent-trust-block-img">
+                <img src="{{ asset('images/kwaliteiten-bureauprofiel-opdrachtgever.jpg') }}" >
+            </div>
+        </section>
+
+        <section class="respondent-cta-block">
+            <div class="content-padding">
+                <div class="respondent-cta-block-text">
+                    <h2 class="white-grostesk" style="font-size: 2rem;">Wil jij ook respondent worden bij Bureau Profiel?</h2>
+                    <button class="register-button">Inschrijven</button>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

@@ -90,23 +90,23 @@ img {
   color: #181818 !important;
   font-family: "Space Grotesk", sans-serif;
   font-weight: 700;
-  font-size: clamp(4rem, 5vw, 5.5rem);
-  margin-bottom: 2rem;
+  font-size: 30px;
+  margin-bottom: 20px;
 }
 
 .white-grostesk {
   color: #fff !important;
   font-family: "Space Grotesk", sans-serif;
   font-weight: 700;
-  font-size: clamp(4rem, 5vw, 5.2rem);
-  margin-bottom: 2rem;
+  font-size: 30px;
+  margin-bottom: 20px;
 }
 
 .black-karla {
   color: #181818 !important;
   font-family: "Karla", sans-serif;
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
 }
 .black-karla-light {
   font-weight: 400;
@@ -119,7 +119,7 @@ img {
   color: #fff !important;
   font-family: "Karla", sans-serif;
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
 }
 .white-karla-bold {
   font-weight: 700;
@@ -129,14 +129,21 @@ img {
   color: #ea5b3f !important;
   font-family: "Space Grotesk", sans-serif;
   font-weight: 600;
-  font-size: 2.2rem;
+  font-size: 22px;
+}
+
+.blue-grotesk {
+  color: #6ec5ed !important;
+  font-family: "Space Grotesk";
+  font-weight: 500;
+  font-size: clamp(17px, 5vw, 20px);
 }
 
 .orange-title {
   color: #ea5b3f !important;
   font-family: "Space Grotesk", sans-serif;
   font-weight: 500;
-  font-size: clamp(1.8rem, 3vw, 2rem);
+  font-size: clamp(18px, 3vw, 20px);
 }
 
 @media only screen and (max-width: 900px) {

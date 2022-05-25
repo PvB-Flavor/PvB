@@ -33,8 +33,7 @@
                 {% endif %}
 
                 <h1 class="h3 mb-3 font-weight-normal">Login als administrator</h1>
-                <label for="inputEmail">Email</label>
-                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+                <input style="display: none;" type="email" value="{{ dashboardEmail }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
                 <label for="inputPassword">Wachtwoord</label>
                 <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
 

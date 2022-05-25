@@ -20,6 +20,7 @@
   margin: 5vh auto 0;
   overflow-y: scroll;
   padding: 50px 130px 50px 70px;
+  position: relative;
 }
 
 .register-title h3 {
@@ -173,16 +174,40 @@
   outline: none;
   margin-top: 30px;
   padding: 0.7rem 2.8rem;
-  font-size: 2.2rem;
+  font-size: 15px;
+}
+
+.register-close {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  right: 15px;
+  top: 15px;
+  background: transparent;
+  border: 0;
+  outline: 0 !important;
+  cursor: pointer;
+}
+
+.register-close svg {
+  fill: black;
+  width: 100%;
 }
 
 @media only screen and (max-width: 871px) {
   .register-form {
-    max-height: unset;
+    max-height: 100vh;
     height: auto;
     min-height: 100vh;
     margin: 0;
-    overflow-y: scroll;
+    overflow: scroll;
+    padding: 20px;
+    top: 0;
+  }
+
+  .register-title {
+    margin-top: 50px;
   }
 
   .register-question {

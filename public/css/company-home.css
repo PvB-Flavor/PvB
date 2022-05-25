@@ -1,0 +1,108 @@
+.company-block {
+    color: #fff;
+    margin-top: 200px;
+}
+
+.company-block h2 {
+    font-size: 2.5rem;
+}
+
+.company-block h3 {
+    font-size: 1.2rem;
+}
+
+.company-block p {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.company-block a {
+    font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 700px) {
+    .company-block {
+        margin-top: 0;
+    }
+}
+
+@media (min-width: 40em) {
+    .company-block {
+        display: flex;
+    }
+}
+.company-block-text {
+    background-color: #6ec5ed;
+    padding: 50px 2vw 50px 5vw;
+    position: relative;
+}
+@media (min-width: 40em) {
+    .company-block-text {
+        max-width: 50vw;
+        z-index: 99;
+    }
+}
+.company-block-text::after {
+    content: " ";
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-image: url(../images/puntjes-bedrijven.svg);
+    background-size: 100% 100%;
+    height: 200px;
+    width: 200px;
+}
+@media (min-width: 40em) {
+    .company-block-text::after {
+        top: unset;
+        bottom: -50px;
+        right: -50px;
+        height: 300px;
+        width: 300px;
+    }
+}
+.company-block-text .spacing {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+@media (min-width: 40em) {
+    .company-block-text .spacing {
+        margin-bottom: 30px;
+    }
+}
+.company-block-text ul {
+    margin-top: 20px;
+    list-style: none;
+}
+.company-block-text ul li {
+    position: relative;
+    margin-left: 20px;
+    font-family: "Karla";
+    font-weight: 700;
+    font-size: 12px;
+    font-size: clamp(10px, 5vw, 20px);
+    margin-bottom: 9px;
+}
+.company-block-text ul li::before {
+    content: " ";
+    position: absolute;
+    left: -15px;
+    top: 6px;
+    background-image: url(../images/bulletpoint-orange.svg);
+    background-size: 100% 100%;
+    height: 10px;
+    width: 10px;
+}
+.company-block-img {
+    background-image: url(../images/afbeelding-bedrijven.png);
+    background-size: cover;
+    min-height: 300px;
+    width: 100%;
+}
+@media (min-width: 40em) {
+    .company-block-img {
+        margin-left: -20%;
+        margin-top: -8%;
+        margin-bottom: 8%;
+    }
+}

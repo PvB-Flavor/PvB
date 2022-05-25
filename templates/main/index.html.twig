@@ -7,134 +7,6 @@
 {% block javascripts %}
     {{ parent() }}
 
-    <script>
-        const FORM_DATA = {
-            pages: [
-                {
-                    fields: [
-                        {
-                            label: 'Voornaam',
-                            type: 'text',
-                            placeholder: 'Voornaam...',
-                            classname: 'register-firstname',
-                            required: true,
-                            fullwidth: false
-                        },
-                        {
-                            label: 'Achternaam',
-                            type: 'text',
-                            placeholder: 'Achternaam...',
-                            classname: 'register-surname',
-                            required: true,
-                            fullwidth: false
-                        },
-                        {
-                            label: 'Jouw e-mailadres',
-                            type: 'email',
-                            placeholder: 'E-mailadres...',
-                            classname: 'register-email',
-                            required: true,
-                            fullwidth: true
-                        },
-                        {
-                            label: 'Geslacht',
-                            type: 'choice',
-                            classname: 'register-gender register-onechoice',
-                            choices: [
-                                {
-                                    id: 'gender-male',
-                                    value: 'male',
-                                    name: 'register-gender',
-                                    label: 'Man'
-                                },
-                                {
-                                    id: 'gender-female',
-                                    value: 'woman',
-                                    name: 'register-gender',
-                                    label: 'Vrouw'
-                                },
-                                {
-                                    id: 'gender-different',
-                                    value: 'different',
-                                    name: 'register-gender',
-                                    label: 'Anders'
-                                },
-                            ],
-                            required: true,
-                            fullwidth: true
-                        },
-                        {
-                            label: 'Geboortedatum',
-                            type: 'date',
-                            classname: 'register-birthdate',
-                            required: true,
-                            fullwidth: false
-                        },
-                        {
-                            label: 'Heb je al eerder meegewerkt aan marktonderzoeken bij Bureau Profiel?',
-                            type: 'choice',
-                            classname: 'register-participated register-onechoice',
-                            choices: [
-                                {
-                                    id: 'participated-yes',
-                                    value: 'no',
-                                    name: 'register-participated',
-                                    label: 'Ja'
-                                },
-                                {
-                                    id: 'participated-no',
-                                    value: 'yes',
-                                    name: 'register-participated',
-                                    label: 'Nee'
-                                },
-                            ],
-                            required: true,
-                            fullwidth: true
-                        },
-                        {
-                            label: 'Zo ja, hoevaak',
-                            type: 'number',
-                            classname: 'register-participationAmount',
-                            required: true,
-                            fullwidth: false
-                        },
-                        {
-                            label: 'Postcode',
-                            type: 'text',
-                            classname: 'register-postalcode',
-                            placeholder: 'Postcode...',
-                            required: true,
-                            fullwidth: false
-                        },
-                        {
-                            label: 'Woonplaats',
-                            type: 'text',
-                            classname: 'register-city',
-                            placeholder: 'Woonplaats...',
-                            required: true,
-                            fullwidth: false
-                        },
-                    ],
-                },
-                {% for page in pages %}
-                    {
-                        fields: [
-                        {% for question in page %}
-                            {
-                                label: '{{ question.question }}',
-                                type: '{{ question.inputType }}',
-                                classname: 'question-{{ question.id }}',
-                                placeholder: '{{ question.question }}...',
-                                required: {% if question.required %}true{% else %}false{% endif %},
-                                fullwidth: {% if question.fullWidth %}true{% else %}false{% endif %}
-                            },
-                        {% endfor %}
-                        ],
-                    },
-                {% endfor %}
-            ]
-        }
-    </script>
 {% endblock %}
 
 {% block main %}
@@ -151,8 +23,8 @@
                 <p>Doe kennis op over van alles</p>
             </div>
             <div class="intro-block-buttons">
-                <button>Respondent worden</button>
-                <a href="">Voor opdrachtgevers ></a>
+                <button class="register-button">Respondent worden</button>
+                <a href="{{ path('app_companies') }}">Voor opdrachtgevers ></a>
             </div>
         </div>
         <div class="intro-block-girl">
@@ -206,6 +78,10 @@
                             {% set companyImageURL = 'uploads/' ~ research.companyImage %}
 
                             <img class="research-main-image" src="{{ asset(imageURL) }}" alt="research image">
+                        </div>
+                        <div class="researches-description">
+                            <p>{{ research.description }}</p>
+                            <a href="{{ research.formLink }}" class="orange-grostesk">Ik wil hier aan meedoen ></a>
                         </div>
                         <img class="research-company-image" src="{{ asset(companyImageURL) }}" alt="research image">
                     </div>
@@ -275,23 +151,29 @@
         </div>
     </section>
 
-    <div class="register">
-        <div class="register-form">
-            <div class="register-title">
-                <h3>Vul hier je gegevens in</h3>
-                <p>En start met verdienen</p>
-            </div>
-            <div class="register-progress">
-
-            </div>
-
-            <div class="register-pages">
-
-            </div>
-
-            <button class="register-submit">Volgende stap</button>
+    <section class="company-block">
+        <div class="company-block-text">
+            <h3 class="orange-title">RESPONDENTEN NODIG?</h3>
+            <h2 class="white-grostesk">Voor de opdrachtgever</h2>
+            <p class="white-karla white-karla-bold">Ons promotieteam rekruteerd continu verse respondenten middels veldwerk. De respondenten zijn
+                zodoende persoonlijk goed geïnformeerd en wij kunnen hen kwalificeren als zeer betrouwbaar.</p>
+            <p class="white-karla spacing">Wij leveren respondenten uit Amsterdam en directe omgeving voor allerlei kwalitatieve
+                onderzoeken. Het aanbod is zeer breed. Wij hebben alle doelgroepen in een eigen database o.a.
+                volwassenen, jongeren, kinderen, westerse Nederlanders, niet-westerse Nederlanders, hoog en
+                lager opgeleiden, zelfstandig ondernemers enzovoort. Tevens kunnen wij ook selecties uitvoeren
+                middels aangeleverde lijsten. </p>
+            <p class="white-karla">Wij doen met regelmaat diverse soorten onderzoeken zoals:</p>
+            <ul>
+                <li>Single interview</li>
+                <li>Groepsdiscussies</li>
+                <li>In home visits</li>
+                <li>Go shoppings</li>
+                <li>Multiculturele groepen</li>
+            </ul>
+            <a class="research-block-more orange-grostesk">Meer voor opdrachtgevers ></a>
         </div>
+        <div class="company-block-img">
 
-        <script src="{{ asset('js/register.js') }}"></script>
-    </div>
+        </div>
+    </section>
 {% endblock %}

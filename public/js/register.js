@@ -1,7 +1,10 @@
+const registerButtons = document.querySelectorAll('.register-button');
+const registerModal = document.querySelector('.register');
 const registerForm = document.querySelector('.register-form');
 const registerProgress = document.querySelector('.register-progress');
 const registerSubmit = document.querySelector('.register-submit');
 const registerPages = document.querySelector('.register-pages');
+const registerClose = document.querySelector('.register-close');
 
 function getFullWidth(bool) {
     if (bool) return `
@@ -101,6 +104,20 @@ class RegistrationForm {
 
             }
         })
+
+        registerButtons.forEach(button => {
+            button.addEventListener('click', () => this.show(true));
+        })
+
+        registerClose.addEventListener('click', () => this.show(false));
+    }
+
+    show(bool) {
+        if (bool) {
+            registerModal.style.display = 'block';
+        } else {
+            registerModal.style.display = 'none';
+        }
     }
 
     generateForm() {

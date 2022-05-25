@@ -203,6 +203,7 @@
 }
 @media (min-width: 0px) and (max-width: 768px) {
     .intro-block-girl img {
+        width: 400px;
         height: 400px;
     }
 }

@@ -8,8 +8,12 @@
     {{ parent() }}
 
     <div class="researches-block">
-        <h3 class="research-block-title"><span class="bgline-1">Nieuwe</span> onderzoeken</h3>
-        <p class="research-block-subtitle">Wij zijn opzoek naar respondenten voor de volgende onderzoeken.</p>
+        <div class="researches-top-bg"></div>
+
+        <div>
+            <h3 class="research-block-title"><span class="bgline-1">Nieuwe</span> onderzoeken</h3>
+            <p class="research-block-subtitle">Wij zijn opzoek naar respondenten voor de volgende onderzoeken.</p>
+        </div>
 
         <div class="researches-grid">
             {% for research in researchesOngoing %}
@@ -23,6 +27,10 @@
                         {% set companyImageURL = 'uploads/' ~ research.companyImage %}
 
                         <img class="researches-main-image" src="{{ asset(imageURL) }}" alt="research image">
+                    </div>
+                    <div class="researches-description">
+                        <p>{{ research.description }}</p>
+                        <a href="{{ research.formLink }}" class="orange-grostesk">Ik wil hier aan meedoen ></a>
                     </div>
                     <img class="researches-company-image" src="{{ asset(companyImageURL) }}" alt="research image">
                 </div>
@@ -44,6 +52,10 @@
                         {% set companyImageURL = 'uploads/' ~ research.companyImage %}
 
                         <img class="researches-main-image" src="{{ asset(imageURL) }}" alt="research image">
+                    </div>
+                    <div class="researches-description">
+                        <p>{{ research.description }}</p>
+                        <a href="{{ research.formLink }}" class="orange-grostesk">Ik wil hier aan meedoen ></a>
                     </div>
                     <img class="researches-company-image" src="{{ asset(companyImageURL) }}" alt="research image">
                 </div>

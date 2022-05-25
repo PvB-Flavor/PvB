@@ -16,9 +16,10 @@ class SecurityController extends AbstractController
      * @Route("/login", name="app_login")
      *
      * @param AuthenticationUtils $authenticationUtils
+     * @param ManagerRegistry $doctrine
      * @return Response
      */
-    public function login(AuthenticationUtils $authenticationUtils): Response
+    public function login(AuthenticationUtils $authenticationUtils, ManagerRegistry $doctrine): Response
     {
          if ($this->getUser()) {
              return $this->redirectToRoute('app_admin');
@@ -26,10 +27,10 @@ class SecurityController extends AbstractController
 
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
-        // last username entered by the user
-        $lastUsername = $authenticationUtils->getLastUsername();
 
-        return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
+         $dashboardEmail = $doctrine->getManager()->getRepository(User::class)->findAll()[0]->getUserIdentifier();
+
+        return $this->render('security/login.html.twig', get_defined_vars());
     }
 
     /**

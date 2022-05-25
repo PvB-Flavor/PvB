@@ -17,6 +17,7 @@
             <link href="{{ asset('css/nav.css') }}" rel="stylesheet">
             <link href="{{ asset('css/contact.css') }}" rel="stylesheet">
             <link href="{{ asset('css/researches.css') }}" rel="stylesheet">
+            <link href="{{ asset('css/company-home.css') }}" rel="stylesheet">
 
             <link href="{{ asset('libraries/slick/slick.css') }}" rel="stylesheet">
 
@@ -29,6 +30,135 @@
             <script src="{{ asset('libraries/slick/slick.min.js') }}"></script>
 
             <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+            <script>
+                const FORM_DATA = {
+                    pages: [
+                        {
+                            fields: [
+                                {
+                                    label: 'Voornaam',
+                                    type: 'text',
+                                    placeholder: 'Voornaam...',
+                                    classname: 'register-firstname',
+                                    required: true,
+                                    fullwidth: false
+                                },
+                                {
+                                    label: 'Achternaam',
+                                    type: 'text',
+                                    placeholder: 'Achternaam...',
+                                    classname: 'register-surname',
+                                    required: true,
+                                    fullwidth: false
+                                },
+                                {
+                                    label: 'Jouw e-mailadres',
+                                    type: 'email',
+                                    placeholder: 'E-mailadres...',
+                                    classname: 'register-email',
+                                    required: true,
+                                    fullwidth: true
+                                },
+                                {
+                                    label: 'Geslacht',
+                                    type: 'choice',
+                                    classname: 'register-gender register-onechoice',
+                                    choices: [
+                                        {
+                                            id: 'gender-male',
+                                            value: 'male',
+                                            name: 'register-gender',
+                                            label: 'Man'
+                                        },
+                                        {
+                                            id: 'gender-female',
+                                            value: 'woman',
+                                            name: 'register-gender',
+                                            label: 'Vrouw'
+                                        },
+                                        {
+                                            id: 'gender-different',
+                                            value: 'different',
+                                            name: 'register-gender',
+                                            label: 'Anders'
+                                        },
+                                    ],
+                                    required: true,
+                                    fullwidth: true
+                                },
+                                {
+                                    label: 'Geboortedatum',
+                                    type: 'date',
+                                    classname: 'register-birthdate',
+                                    required: true,
+                                    fullwidth: false
+                                },
+                                {
+                                    label: 'Heb je al eerder meegewerkt aan marktonderzoeken bij Bureau Profiel?',
+                                    type: 'choice',
+                                    classname: 'register-participated register-onechoice',
+                                    choices: [
+                                        {
+                                            id: 'participated-yes',
+                                            value: 'no',
+                                            name: 'register-participated',
+                                            label: 'Ja'
+                                        },
+                                        {
+                                            id: 'participated-no',
+                                            value: 'yes',
+                                            name: 'register-participated',
+                                            label: 'Nee'
+                                        },
+                                    ],
+                                    required: true,
+                                    fullwidth: true
+                                },
+                                {
+                                    label: 'Zo ja, hoevaak',
+                                    type: 'number',
+                                    classname: 'register-participationAmount',
+                                    required: true,
+                                    fullwidth: false
+                                },
+                                {
+                                    label: 'Postcode',
+                                    type: 'text',
+                                    classname: 'register-postalcode',
+                                    placeholder: 'Postcode...',
+                                    required: true,
+                                    fullwidth: false
+                                },
+                                {
+                                    label: 'Woonplaats',
+                                    type: 'text',
+                                    classname: 'register-city',
+                                    placeholder: 'Woonplaats...',
+                                    required: true,
+                                    fullwidth: false
+                                },
+                            ],
+                        },
+                        {% for page in pages %}
+                        {
+                            fields: [
+                                {% for question in page %}
+                                {
+                                    label: '{{ question.question }}',
+                                    type: '{{ question.inputType }}',
+                                    classname: 'question-{{ question.id }}',
+                                    placeholder: '{{ question.question }}...',
+                                    required: {% if question.required %}true{% else %}false{% endif %},
+                                    fullwidth: {% if question.fullWidth %}true{% else %}false{% endif %}
+                                },
+                                {% endfor %}
+                            ],
+                        },
+                        {% endfor %}
+                    ]
+                }
+            </script>
         {% endblock %}
     </head>
     <body>
@@ -50,12 +180,12 @@
             <ul class="nav-pages">
                 <li class="nav-page {% if app.request.get('_route') == 'app_home' %}nav-page-active{% endif %}"><a href="{{ path('app_home') }}">Home</a></li>
                 <li class="nav-page {% if app.request.get('_route') == 'app_respondent' %}nav-page-active{% endif %}"><a href="{{ path('app_respondent') }}">Respondenten</a></li>
-                <li class="nav-page"><a href="">Opdrachtgever</a></li>
+                <li class="nav-page {% if app.request.get('_route') == 'app_companies' %}nav-page-active{% endif %}"><a href="{{ path('app_companies') }}">Opdrachtgever</a></li>
                 <li class="nav-page {% if app.request.get('_route') == 'app_researches' %}nav-page-active{% endif %}"><a href="{{ path('app_researches') }}">Onderzoeken</a></li>
                 <li class="nav-page {% if app.request.get('_route') == 'app_contact' %}nav-page-active{% endif %}"><a href="{{ path('app_contact') }}">Contact</a></li>
             </ul>
 
-            <div class="nav-cta"><button class="nav-register">Inschrijven</button></div>
+            <div class="nav-cta"><button class="nav-register register-button">Inschrijven</button></div>
 
             <div class="nav-mobile-open"><svg viewBox="0 0 448 512"><path d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg></div>
         </nav>
@@ -66,7 +196,7 @@
             <ul class="nav-mobile-pages">
                 <li class="nav-mobile-page {% if app.request.get('_route') == 'app_home' %}nav-mobile-page-active{% endif %}"><a href="{{ path('app_home') }}">Home</a></li>
                 <li class="nav-mobile-page {% if app.request.get('_route') == 'app_respondent' %}nav-mobile-page-active{% endif %}"><a href="{{ path('app_respondent') }}">Respondenten</a></li>
-                <li class="nav-mobile-page"><a href="">Opdrachtgever</a></li>
+                <li class="nav-mobile-page {% if app.request.get('_route') == 'app_companies' %}nav-mobile-page-active{% endif %}"><a href="{{ path('app_companies') }}">Opdrachtgever</a></li>
                 <li class="nav-mobile-page {% if app.request.get('_route') == 'app_researches' %}nav-mobile-page-active{% endif %}"><a href="{{ path('app_researches') }}">Onderzoeken</a></li>
                 <li class="nav-mobile-page {% if app.request.get('_route') == 'app_contact' %}nav-mobile-page-active{% endif %}"><a href="{{ path('app_contact') }}">Contact</a></li>
             </ul>
@@ -95,7 +225,7 @@
                             <h5 class="orange-title">Pagina's</h5>
                             <a class="black-karla black-karla-light" href="{{ path('app_home') }}">Home</a>
                             <a class="black-karla black-karla-light" href="{{ path('app_respondent') }}">Respondent</a>
-                            <a class="black-karla black-karla-light" href="#">Opdrachtgever</a>
+                            <a class="black-karla black-karla-light" href="{{ path('app_companies') }}">Opdrachtgever</a>
                             <a class="black-karla black-karla-light" href="{{ path('app_researches') }}">Onderzoeken</a>
                             <a class="black-karla black-karla-light" href="{{ path('app_contact') }}">Contact</a>
                         </div>
@@ -130,5 +260,27 @@
             </div>
 
         </footer>
+
+        <div class="register">
+            <div class="register-form">
+                <button class="register-close"><svg viewBox="0 0 320 512"><path d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg></button>
+
+                <div class="register-title">
+                    <h3>Vul hier je gegevens in</h3>
+                    <p>En start met verdienen</p>
+                </div>
+                <div class="register-progress">
+
+                </div>
+
+                <div class="register-pages">
+
+                </div>
+
+                <button class="register-submit">Volgende stap</button>
+            </div>
+
+            <script src="{{ asset('js/register.js') }}"></script>
+        </div>
     </body>
 </html>

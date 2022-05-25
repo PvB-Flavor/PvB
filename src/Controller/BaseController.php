@@ -26,8 +26,9 @@ class BaseController extends AbstractController
         $email = null;
         if ($this->getUser()) $email = $this->getUser()->getUserIdentifier();
 
-        $questions = $doctrine->getRepository(Question::class)->findAll();
         $researches = $doctrine->getRepository(Research::class)->findAll();
+
+        $questions = $doctrine->getRepository(Question::class)->findAll();
 
         $maxPageSize = 10;
         $pages = [];
@@ -62,6 +63,19 @@ class BaseController extends AbstractController
 
         foreach ($researches as $research) ($research->getOngoing() === true) ? $researchesOngoing[] = $research : $researchesDone[] = $research;
 
+        $questions = $doctrine->getRepository(Question::class)->findAll();
+
+        $maxPageSize = 10;
+        $pages = [];
+        $currentPage = 0;
+
+        foreach ( $questions as $question ) {
+            if (!array_key_exists($currentPage, $pages)) $pages[$currentPage] = [];
+            array_push($pages[$currentPage], $question);
+
+            if (count($pages[$currentPage]) >= $maxPageSize) $currentPage++;
+        }
+
         return $this->render('main/researches.html.twig', get_defined_vars());
     }
 
@@ -76,7 +90,47 @@ class BaseController extends AbstractController
         $email = null;
         if ($this->getUser()) $email = $this->getUser()->getUserIdentifier();
 
+        $questions = $doctrine->getRepository(Question::class)->findAll();
+
+        $maxPageSize = 10;
+        $pages = [];
+        $currentPage = 0;
+
+        foreach ( $questions as $question ) {
+            if (!array_key_exists($currentPage, $pages)) $pages[$currentPage] = [];
+            array_push($pages[$currentPage], $question);
+
+            if (count($pages[$currentPage]) >= $maxPageSize) $currentPage++;
+        }
+
         return $this->render('main/respondent.html.twig', get_defined_vars());
+    }
+
+    /**
+     * @Route("/bedrijven", name="app_companies")
+     *
+     * @param ManagerRegistry $doctrine
+     * @return Response
+     */
+    public function companies(ManagerRegistry $doctrine): Response
+    {
+        $email = null;
+        if ($this->getUser()) $email = $this->getUser()->getUserIdentifier();
+
+        $questions = $doctrine->getRepository(Question::class)->findAll();
+
+        $maxPageSize = 10;
+        $pages = [];
+        $currentPage = 0;
+
+        foreach ( $questions as $question ) {
+            if (!array_key_exists($currentPage, $pages)) $pages[$currentPage] = [];
+            array_push($pages[$currentPage], $question);
+
+            if (count($pages[$currentPage]) >= $maxPageSize) $currentPage++;
+        }
+
+        return $this->render('main/companies.html.twig', get_defined_vars());
     }
 
     /**
@@ -107,6 +161,19 @@ class BaseController extends AbstractController
             $formSent = true;
 
             return $this->redirectToRoute('app_contact', ['success' => true]);
+        }
+
+        $questions = $doctrine->getRepository(Question::class)->findAll();
+
+        $maxPageSize = 10;
+        $pages = [];
+        $currentPage = 0;
+
+        foreach ( $questions as $question ) {
+            if (!array_key_exists($currentPage, $pages)) $pages[$currentPage] = [];
+            array_push($pages[$currentPage], $question);
+
+            if (count($pages[$currentPage]) >= $maxPageSize) $currentPage++;
         }
 
         return $this->renderForm('main/contact.html.twig', get_defined_vars());

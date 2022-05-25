@@ -5,9 +5,11 @@ namespace App\Controller\Admin;
 use App\Entity\Contact;
 use App\Entity\Question;
 use App\Entity\Research;
+use App\Entity\User;
 use App\Form\ContactType;
 use App\Form\QuestionType;
 use App\Form\ResearchType;
+use App\Form\UserType;
 use Doctrine\Persistence\ManagerRegistry;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -18,10 +20,12 @@ use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\String\Slugger\SluggerInterface;
 
 /**
@@ -55,6 +59,7 @@ class DashboardController extends AbstractDashboardController
             MenuItem::linkToRoute('Vragen', 'fa-solid fa-question', 'app_admin_questions'),
             MenuItem::linkToRoute('Contact', 'fa-solid fa-address-book', 'app_admin_contacts'),
             MenuItem::linkToRoute('Onderzoeken', 'fa-solid fa-book', 'app_admin_researches'),
+            MenuItem::linkToRoute('Account', 'fa-solid fa-user-gear', 'app_admin_user'),
             MenuItem::linkToRoute('Naar site', 'fa-solid fa-arrow-right-from-bracket', 'app_home')
         ];
     }
@@ -264,5 +269,35 @@ class DashboardController extends AbstractDashboardController
         }
 
         throw new Exception('Target not found.');
+    }
+
+    /**
+     * @Route("/gebruiker", name="app_admin_user")
+     *
+     * @param Request $request
+     * @param ManagerRegistry $doctrine
+     * @param UserPasswordHasherInterface $passwordHasher
+     * @param UserInterface $user
+     * @return Response|Exception
+     */
+    public function userAccount(Request $request, ManagerRegistry $doctrine, UserPasswordHasherInterface $passwordHasher, UserInterface $user): ?Response
+    {
+        $form = $this->createForm(UserType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $newPassword = $form->get('password')->getData();
+
+            $hashedPassword = $passwordHasher->hashPassword(
+                $user,
+                $newPassword
+            );
+
+            $user->setPassword($hashedPassword);
+
+            $doctrine->getManager()->flush();
+        }
+
+        return $this->renderForm('admin/userForm.html.twig', get_defined_vars());
     }
 }
