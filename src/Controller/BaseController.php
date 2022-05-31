@@ -79,4 +79,16 @@ class BaseController extends AbstractController
 
         return $this->render('base/company.html.twig', get_defined_vars());
     }
+        /**
+     * @Route("/disclaimer", name="app_disclaimer")
+     *
+     * @return Response
+     */
+    public function disclaimer(): Response
+    {
+        $email = null;
+        if ($this->getUser()) $email = $this->getUser()->getUserIdentifier();
+
+        return $this->render('base/disclaimer.html.twig', get_defined_vars());
+    }
 }

@@ -26,6 +26,9 @@
   font-size: clamp(3em, 5vw, 4.5em);
   margin-bottom: 2rem;
 }
+.white-grostesk-light {
+  font-weight: 400;
+}
 
 .black-karla {
   color: #181818;
@@ -48,6 +51,9 @@
 }
 .white-karla-bold {
   font-weight: 700;
+}
+.white-karla-light {
+  font-weight: 300 !important;
 }
 
 .orange-grostesk {
