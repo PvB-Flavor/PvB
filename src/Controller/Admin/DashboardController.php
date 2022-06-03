@@ -60,6 +60,7 @@ class DashboardController extends AbstractDashboardController
             MenuItem::linkToRoute('Vragen', 'fa-solid fa-question', 'app_admin_questions'),
             MenuItem::linkToRoute('Contact', 'fa-solid fa-address-book', 'app_admin_contacts'),
             MenuItem::linkToRoute('Onderzoeken', 'fa-solid fa-book', 'app_admin_researches'),
+            MenuItem::linkToRoute('Lopende Respondenten', 'fa-solid fa-check', 'app_admin_respondents-pending'),
             MenuItem::linkToRoute('Naar site', 'fa-solid fa-arrow-right-from-bracket', 'app_home')
         ];
 
@@ -298,5 +299,28 @@ class DashboardController extends AbstractDashboardController
         }
 
         return $this->renderForm('admin/userForm.html.twig', get_defined_vars());
+    }
+
+    /**
+     * @Route("/pending-respondenten", name="app_admin_respondents-pending",
+     *     defaults={"action": "all"}
+     * )
+     *
+     *
+     * @param Request $request
+     * @param ManagerRegistry $doctrine
+     * @param SluggerInterface $slugger
+     * @param null $action
+     * @param Research|null $research
+     * @return Response|Exception
+     */
+    public function respondentAdmin(Request $request, ManagerRegistry $doctrine, SluggerInterface $slugger, $action = null, ?Research $research = null): ?Response
+    {
+        if ($action === 'all' || $action === null) {
+            $respondents = $doctrine->getManager()->getRepository(PendingRespondent::class)->findAll();
+            return $this->render('admin/pendingRespondents.html.twig', get_defined_vars());
+        }
+
+        throw new Exception('Target not found.');
     }
 }

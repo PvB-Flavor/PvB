@@ -1,0 +1,61 @@
+{% extends '/admin/dashboard.html.twig' %}
+
+{% block main %}
+
+    <h2>Lopende Respondenten</h2>
+
+    <table id="respondents" class="ui celled table" style="width:100%;">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Data</th>
+            <th>Accept</th>
+            <th>Decline</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for respondent in respondents %}
+            <tr>
+                <td>{{ respondent.id }}</td>
+                <td>{{ respondent.data }}</td>
+                <td></td>
+                <td></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        <tfoot>
+        <tr>
+            <th>ID</th>
+            <th>Data</th>
+            <th>Accept</th>
+            <th>Decline</th>
+        </tr>
+        </tfoot>
+    </table>
+
+    <script>
+        $(document).ready(function () {
+            $('#respondents').DataTable({
+                aoColumnDefs: [
+                    {
+                        bSortable: false,
+                        aTargets: [ -1 ]
+                    }
+                ],
+                language: {
+                    "lengthMenu": "_MENU_  Rijen per pagina",
+                    "zeroRecords": "Geen resultaten gevonden",
+                    "info": "Pagina _PAGE_ van _PAGES_",
+                    "infoEmpty": "Geen data beschikbaar",
+                    "infoFiltered": "",
+                    "search": 'Zoeken',
+                    "paginate": {
+                        previous: 'Vorige',
+                        next:     'Volgende',
+                    },
+                }
+            });
+        });
+    </script>
+
+{% endblock %}

@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e6b0d37-5b9a-4d1a-ab68-f8fa81be595b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Entity/PendingRespondent.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/main/disclaimer.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/pendingRespondents.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/EasyAdminOverride.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/EasyAdminOverride.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/register.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/register.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BaseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Respondent.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Respondent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,16 +126,16 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Entity" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/admin" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PvB\templates\admin" />
       <recent name="D:\PvB\src\Entity" />
       <recent name="D:\PvB\src\Form" />
-      <recent name="D:\PvB\templates\admin" />
       <recent name="D:\PvB\templates\base" />
       <recent name="D:\PvB\templates" />
     </key>
@@ -177,7 +169,7 @@
       <workItem from="1653427493834" duration="7248000" />
       <workItem from="1653464062647" duration="3492000" />
       <workItem from="1654250078414" duration="2507000" />
-      <workItem from="1654261834181" duration="6516000" />
+      <workItem from="1654261834181" duration="7620000" />
     </task>
     <servers />
   </component>
