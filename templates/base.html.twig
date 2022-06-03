@@ -32,6 +32,10 @@
             <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
             <script>
+                const REGISTER_URL = '{{ url('app_new_respondent') }}';
+            </script>
+
+            <script>
                 const FORM_DATA = {
                     pages: [
                         {
@@ -40,7 +44,8 @@
                                     label: 'Voornaam',
                                     type: 'text',
                                     placeholder: 'Voornaam...',
-                                    classname: 'register-firstname',
+                                    classname: 'register-firstname registerField',
+                                    dataField: 'voornaam',
                                     required: true,
                                     fullwidth: false
                                 },
@@ -48,7 +53,8 @@
                                     label: 'Achternaam',
                                     type: 'text',
                                     placeholder: 'Achternaam...',
-                                    classname: 'register-surname',
+                                    classname: 'register-surname registerField',
+                                    dataField: 'achternaam',
                                     required: true,
                                     fullwidth: false
                                 },
@@ -56,84 +62,33 @@
                                     label: 'Jouw e-mailadres',
                                     type: 'email',
                                     placeholder: 'E-mailadres...',
-                                    classname: 'register-email',
-                                    required: true,
-                                    fullwidth: true
-                                },
-                                {
-                                    label: 'Geslacht',
-                                    type: 'choice',
-                                    classname: 'register-gender register-onechoice',
-                                    choices: [
-                                        {
-                                            id: 'gender-male',
-                                            value: 'male',
-                                            name: 'register-gender',
-                                            label: 'Man'
-                                        },
-                                        {
-                                            id: 'gender-female',
-                                            value: 'woman',
-                                            name: 'register-gender',
-                                            label: 'Vrouw'
-                                        },
-                                        {
-                                            id: 'gender-different',
-                                            value: 'different',
-                                            name: 'register-gender',
-                                            label: 'Anders'
-                                        },
-                                    ],
+                                    classname: 'register-email registerField',
+                                    dataField: 'email',
                                     required: true,
                                     fullwidth: true
                                 },
                                 {
                                     label: 'Geboortedatum',
                                     type: 'date',
-                                    classname: 'register-birthdate',
-                                    required: true,
-                                    fullwidth: false
-                                },
-                                {
-                                    label: 'Heb je al eerder meegewerkt aan marktonderzoeken bij Bureau Profiel?',
-                                    type: 'choice',
-                                    classname: 'register-participated register-onechoice',
-                                    choices: [
-                                        {
-                                            id: 'participated-yes',
-                                            value: 'no',
-                                            name: 'register-participated',
-                                            label: 'Ja'
-                                        },
-                                        {
-                                            id: 'participated-no',
-                                            value: 'yes',
-                                            name: 'register-participated',
-                                            label: 'Nee'
-                                        },
-                                    ],
-                                    required: true,
-                                    fullwidth: true
-                                },
-                                {
-                                    label: 'Zo ja, hoevaak',
-                                    type: 'number',
-                                    classname: 'register-participationAmount',
+                                    classname: 'register-birthdate registerField',
+                                    dataField: 'geboortedatum',
                                     required: true,
                                     fullwidth: false
                                 },
                                 {
                                     label: 'Postcode',
                                     type: 'text',
-                                    classname: 'register-postalcode',
+                                    classname: 'register-postalcode registerField',
                                     placeholder: 'Postcode...',
+                                    dataField: 'postcode',
                                     required: true,
                                     fullwidth: false
                                 },
                                 {
                                     label: 'Woonplaats',
                                     type: 'text',
-                                    classname: 'register-city',
+                                    classname: 'register-city registerField',
+                                    dataField: 'woonplaats',
                                     placeholder: 'Woonplaats...',
                                     required: true,
                                     fullwidth: false
@@ -147,7 +102,8 @@
                                 {
                                     label: '{{ question.question }}',
                                     type: '{{ question.inputType }}',
-                                    classname: 'question-{{ question.id }}',
+                                    classname: 'question-{{ question.id }} registerField',
+                                    dataField: '{{ question.question }}',
                                     placeholder: '{{ question.question }}...',
                                     required: {% if question.required %}true{% else %}false{% endif %},
                                     fullwidth: {% if question.fullWidth %}true{% else %}false{% endif %}
@@ -253,7 +209,7 @@
                     <a class="black-karla black-karla-light" href="#">Cookies</a>
                     <a class="black-karla black-karla-light" href="#">Algemene voorwaarden</a>
                     <a class="black-karla black-karla-light" href="#">Privacyverklaring</a>
-                    <a class="black-karla black-karla-light" href="#">Disclaimer</a>
+                    <a class="black-karla black-karla-light" href="{{ path('app_disclaimer') }}">Disclaimer</a>
                     <a class="black-karla black-karla-light" href="#">Uitschrijven</a>
                 </div>
 

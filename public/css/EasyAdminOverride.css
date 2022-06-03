@@ -1,3 +1,65 @@
 .content-header {
     padding: 0 !important;
 }
+
+.sidebar {
+    background: #5AA9CE;
+    padding: 0;
+}
+
+.sidebar * {
+    color: white;
+}
+
+.logo {
+    height: 56px !important;
+    background: black !important;
+    padding: 15px !important;
+}
+
+.resizer-handler {
+    display: none !important;
+}
+
+.navbar {
+    padding: 0 !important;
+}
+
+.content-top {
+    background: black !important;
+}
+
+.user-name {
+    color: white !important;
+}
+
+.responsive-header {
+    background: black !important;
+    box-shadow: none !important;
+}
+
+.responsive-header * {
+    color: white !important;
+}
+
+.menu li {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.menu-item a {
+    color: white;
+    background: #6EC5ED;
+
+}
+
+.active a {
+    background: #EA5B3F !important;
+}
+
+.menu-item-contents {
+    padding: 10px 5px !important;
+}
+.sidebar *:before {
+    color: white;
+}

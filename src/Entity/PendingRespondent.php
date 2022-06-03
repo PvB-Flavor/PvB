@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass=RespondentRepository::class)
  */
-class Respondent
+class PendingRespondent
 {
     /**
      * @ORM\Id

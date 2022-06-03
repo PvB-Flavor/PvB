@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Contact;
+use App\Entity\PendingRespondent;
 use App\Entity\Question;
 use App\Entity\Research;
 use App\Entity\User;
@@ -54,14 +55,17 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        return [
+        $toReturn = [
             MenuItem::linkToDashboard('Dashboard', 'fa fa-home'),
             MenuItem::linkToRoute('Vragen', 'fa-solid fa-question', 'app_admin_questions'),
             MenuItem::linkToRoute('Contact', 'fa-solid fa-address-book', 'app_admin_contacts'),
             MenuItem::linkToRoute('Onderzoeken', 'fa-solid fa-book', 'app_admin_researches'),
-            MenuItem::linkToRoute('Account', 'fa-solid fa-user-gear', 'app_admin_user'),
             MenuItem::linkToRoute('Naar site', 'fa-solid fa-arrow-right-from-bracket', 'app_home')
         ];
+
+        if ($this->getUser()) $toReturn[] = MenuItem::linkToRoute('Account', 'fa-solid fa-user-gear', 'app_admin_user');
+
+        return $toReturn;
     }
 
     /**
@@ -159,13 +163,10 @@ class DashboardController extends AbstractDashboardController
                             $this->getParameter('kernel.project_dir').'/public/uploads',
                             $newFilename
                         );
+                        $research->setImage($newFilename);
                     } catch (FileException $e) {
-                        throw new FileException('Failed to upload image.');
+                        $research->setImage('placeholder.jpg');
                     }
-
-                    $research->setImage($newFilename);
-                } else {
-                    $research->setImage('placeholder.jpg');
                 }
 
                 if ($companyImageFile) {
@@ -178,13 +179,11 @@ class DashboardController extends AbstractDashboardController
                             $this->getParameter('kernel.project_dir').'/public/uploads',
                             $newFilename
                         );
-                    } catch (FileException $e) {
-                        throw new FileException('Failed to upload image.');
-                    }
 
-                    $research->setCompanyImage($newFilename);
-                } else {
-                    $research->setCompanyImage('placeholder.jpg');
+                        $research->setCompanyImage($newFilename);
+                    } catch (FileException $e) {
+                        $research->setImage('placeholder.jpg');
+                    }
                 }
 
                 $doctrine->getManager()->persist($research);

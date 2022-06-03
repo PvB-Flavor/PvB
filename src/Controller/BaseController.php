@@ -3,12 +3,14 @@
 namespace App\Controller;
 
 use App\Entity\Contact;
+use App\Entity\PendingRespondent;
 use App\Entity\Question;
 use App\Entity\Research;
 use App\Form\ContactType;
 use App\Form\RegisterType;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -107,6 +109,33 @@ class BaseController extends AbstractController
     }
 
     /**
+     * @Route("/disclaimer", name="app_disclaimer")
+     *
+     * @param ManagerRegistry $doctrine
+     * @return Response
+     */
+    public function disclaimer(ManagerRegistry $doctrine): Response
+    {
+        $email = null;
+        if ($this->getUser()) $email = $this->getUser()->getUserIdentifier();
+
+        $questions = $doctrine->getRepository(Question::class)->findAll();
+
+        $maxPageSize = 10;
+        $pages = [];
+        $currentPage = 0;
+
+        foreach ( $questions as $question ) {
+            if (!array_key_exists($currentPage, $pages)) $pages[$currentPage] = [];
+            array_push($pages[$currentPage], $question);
+
+            if (count($pages[$currentPage]) >= $maxPageSize) $currentPage++;
+        }
+
+        return $this->render('main/disclaimer.html.twig', get_defined_vars());
+    }
+
+    /**
      * @Route("/bedrijven", name="app_companies")
      *
      * @param ManagerRegistry $doctrine
@@ -177,5 +206,30 @@ class BaseController extends AbstractController
         }
 
         return $this->renderForm('main/contact.html.twig', get_defined_vars());
+    }
+
+    /**
+     * @Route("/nieuwRespondent", name="app_new_respondent", methods={"POST"}, defaults={"action": "new"})
+     *
+     * @param Request $request
+     * @param ManagerRegistry $doctrine
+     * @param string $action
+     * @return Response|Exception
+     */
+    public function manageRespondent(Request $request, ManagerRegistry $doctrine, string $action): ?Response
+    {
+        if ($action === 'new') {
+            $pendingRespondent = new PendingRespondent();
+
+            $givenData = $request->getContent();
+            $data = htmlspecialchars($givenData);
+
+            $pendingRespondent->setData($data);
+
+            $doctrine->getManager()->persist($pendingRespondent);
+            $doctrine->getManager()->flush();
+        }
+
+        return new Response(dump($request->getContent()));
     }
 }

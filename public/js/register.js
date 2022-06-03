@@ -6,6 +6,8 @@ const registerSubmit = document.querySelector('.register-submit');
 const registerPages = document.querySelector('.register-pages');
 const registerClose = document.querySelector('.register-close');
 
+let sent = false;
+
 function getFullWidth(bool) {
     if (bool) return `
         style="width: 100%;"
@@ -15,7 +17,7 @@ function getFullWidth(bool) {
 }
 
 function getRequired(bool) {
-    if (bool) return `required"`;
+    if (bool) return `required`;
     return '';
 }
 
@@ -24,7 +26,7 @@ const getFieldMarkup = {
         return `
             <div class="register-question" ${ getFullWidth(data.fullwidth) }>
                 <p>${ data.label }</p>
-                <input ${ getRequired(data.required) } class="${ data.classname }" type="text" placeholder="${ data.placeholder || '' }">
+                <input ${ getRequired(data.required) } class="${ data.classname }" data-field="${ data.dataField }" type="text" placeholder="${ data.placeholder || '' }">
             </div>
         `;
     },
@@ -33,7 +35,7 @@ const getFieldMarkup = {
         return `
             <div class="register-question" ${ getFullWidth(data.fullwidth) }>
                 <p>${ data.label }</p>
-                <input ${ getRequired(data.required) } class="${ data.classname }" type="email" placeholder="${ data.placeholder || '' }">
+                <input ${ getRequired(data.required) } class="${ data.classname }" data-field="${ data.dataField }" type="email" placeholder="${ data.placeholder || '' }">
             </div>
         `;
     },
@@ -45,7 +47,7 @@ const getFieldMarkup = {
             for (let i = 0; i < data.choices.length; i++) {
                 markup += `
                     <div class="register-choice" >
-                        <input type="radio" id="${ data.choices[i].id }" name="${ data.choices[i].name }" value="${ data.choices[i].value }" checked>
+                        <input type="radio" id="${ data.choices[i].id }" data-field="${ data.dataField }" name="${ data.choices[i].name }" value="${ data.choices[i].value }" checked>
                         <label for="${ data.choices[i].id }">${ data.choices[i].label }</label>
                     </div>
                 `;
@@ -68,7 +70,7 @@ const getFieldMarkup = {
         return `
             <div class="register-question" ${ data.fullwidth }>
                 <p>${ data.label }</p>
-                <input ${ getRequired(data.required) } class="${ data.classname }" type="date">
+                <input ${ getRequired(data.required) } data-field="${ data.dataField }" class="${ data.classname }" type="date">
             </div>
         `;
     },
@@ -77,7 +79,7 @@ const getFieldMarkup = {
         return `
             <div class="register-question" ${ data.fullwidth }>
                 <p>${ data.label }</p>
-                <input ${ getRequired(data.required) } class="${ data.classname }" value="0" type="number">
+                <input ${ getRequired(data.required) } class="${ data.classname }" data-field="${ data.dataField }" value="0" type="number">
             </div>
         `;
     }
@@ -98,10 +100,46 @@ class RegistrationForm {
         this.generateForm();
 
         registerSubmit.addEventListener('click', () => {
+            let errors = registerForm.querySelectorAll('.error');
+
+            if (errors) {
+                errors.forEach(element => {
+                    element.remove();
+                });
+            }
+
             if (this.currentPage + 1 !== this.pages.length) {
                 this.toPage(this.currentPage + 1);
             } else if (this.currentPage + 1 === this.pages.length) {
+                let data = {};
 
+                const registerFields = document.querySelectorAll('.registerField');
+                let success = true;
+
+                registerFields.forEach(field => {
+                    if (field.hasAttribute('required') && (field.value === '' || field.value.length === 0)) {
+                        console.log(true);
+                        if (!field.parentElement.querySelector('.error'))
+                            field.parentElement.innerHTML += '<p class="error" style="margin: 0; padding: 0; color: red;">Veld is verplicht.</p>';
+
+                        this.toPage(0);
+
+                        success = false;
+                    } else {
+                        data[field.getAttribute('data-field')] = field.value;
+                    }
+                });
+
+                if (success !== true) return;
+
+                this.show(false);
+                sent = true;
+
+                fetch(REGISTER_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    body: JSON.stringify(data),
+                });
             }
         })
 
@@ -113,7 +151,7 @@ class RegistrationForm {
     }
 
     show(bool) {
-        if (bool) {
+        if (bool && sent === false) {
             registerModal.style.display = 'block';
         } else {
             registerModal.style.display = 'none';
@@ -146,6 +184,21 @@ class RegistrationForm {
 
         this.currentPage = index;
         this.pages[index].style.display = 'flex';
+
+        // if (this.currentPage > 0) {
+        //     registerForm.innerHTML += `
+        //         <button class="register-prev">Vorige stap</button>
+        //     `;
+        //
+        //     registerForm.querySelector('.register-prev').addEventListener('click', () => {
+        //         this.toPage(this.currentPage - 1);
+        //     })
+        //
+        // } else {
+        //     if (registerForm.querySelector('.register-prev')) {
+        //         registerForm.querySelector('.register-prev').remove();
+        //     }
+        // }
 
         if (this.currentPage + 1 === this.pages.length) {
             registerSubmit.innerHTML = 'Verstuur inschrijving';

@@ -165,7 +165,7 @@
   display: inline-block;
 }
 
-.register-submit {
+.register-submit, .register-prev {
   background: #ea5b3f;
   color: white;
   font-family: "Space Grotesk", sans-serif;
